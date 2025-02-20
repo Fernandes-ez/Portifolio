@@ -1,0 +1,30 @@
+body {
+    z-index: 2;
+    position: relative; 
+    font-family: 'Anta', sans-serif;
+}
+
+.title {
+    background: radial-gradient(circle at center, #0a0a36, #000010);
+    color: white;
+    padding: 2vh 0 2vh 30vh;
+    margin-right: 140vh;
+    border-radius: 0 10px 10px 0;
+    position: relative; /* Adicione position: relative */
+    z-index: 2; /* Adicione z-index */
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #4a0072, #1a0033, #0a001a);
+
+    z-index: -2; /* Ajuste o z-index para um valor menor */
+}
+.anta-regular {
+    font-family: "Anta", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  

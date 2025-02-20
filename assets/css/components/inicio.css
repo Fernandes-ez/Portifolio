@@ -1,0 +1,17 @@
+.inicio{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    z-index: 2;
+}
+.inicioTitulo{
+    color: aliceblue;
+    padding: 2vh 0 2vh 20vh;
+}
+.inicioSubtitulo{
+    color: aliceblue;
+    padding: 2vh 0 2vh 20vh;
+    font-size: 1.5em;
+}
