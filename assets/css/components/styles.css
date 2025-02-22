@@ -5,13 +5,13 @@ body {
 }
 
 .title {
-    background: radial-gradient(circle at center, #0a0a36, #000010);
-    color: white;
+    background: radial-gradient(circle at center, #0a001a, #4a0072);        color: white;
     padding: 2vh 0 2vh 30vh;
     margin-right: 140vh;
     border-radius: 0 10px 10px 0;
     position: relative; /* Adicione position: relative */
     z-index: 2; /* Adicione z-index */
+    box-shadow: purple 0px 0px 10px;
 }
 
 #particles-js {
@@ -27,4 +27,13 @@ body {
     font-weight: 400;
     font-style: normal;
   }
-  
+.text{
+    justify-content: center;
+    background: radial-gradient(circle at center, #4a0072, #0a001a);    margin: 10vh 20vh 0vh 20vh;
+    padding: 2vh 2vh 2vh 2vh;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5em;
+    box-shadow: purple 0px 0px 10px;
+    opacity: 0.8;
+}

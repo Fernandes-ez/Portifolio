@@ -2,3 +2,25 @@
     width: 100%;
     height: 100vh;
 }
+.textSM {
+    justify-content: center;
+    background: radial-gradient(circle at center, #4a0072, #0a001a);
+    margin: 12% 5% 2vh 5%; /* Ajuste a margem horizontal para 5% */
+    padding: 2vh 2vh 2vh 2vh;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5em;
+    box-shadow: purple 0px 0px 10px;
+    opacity: 0.8;
+}
+.textSM p{
+    opacity: 1 !important;
+}
+a{
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+}
+a:hover{
+    color: #be7abb;
+}

@@ -15,3 +15,17 @@
     padding: 2vh 0 2vh 20vh;
     font-size: 1.5em;
 }
+#curriculoBtn{
+    padding: 1vh 2vh;
+    background-color: #be7abb;
+    color: aliceblue;
+    border: none;
+    border-radius: 5px;
+    margin: 2vh 0 2vh 20vh;
+    cursor: pointer;
+}
+#curriculoBtn:hover{
+    background-color: #4a0072;
+    transition: 0.5s;
+    color: #be7abb;
+}

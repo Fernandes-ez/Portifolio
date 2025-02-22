@@ -1,0 +1,49 @@
+.habilidades {
+    width: 100%;
+    height: 100vh;
+}
+
+.devicons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0;
+    list-style: none;
+}
+
+.devicons i {
+    font-size: 5em;
+    color: #be7abb;
+    transition: transform 0.3s ease; /* Adicione uma transição suave */
+}
+
+.devicons li {
+    background: radial-gradient(circle at center, #4a0072, #0a001a);
+    padding: 20px;
+    border-radius: 0 15px 0 0;
+    box-shadow: purple 0px 0px 10px;
+    margin: 30px;
+}
+
+.devicon-item:hover i {
+    transform: scale(1.2); /* Aumente o tamanho do ícone ao passar o mouse */
+}
+
+.devicon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.devicon-item i {
+    font-size: 3rem; /* Ajuste o tamanho do ícone conforme necessário */
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+}
+
+.devicon-item span {
+    font-size: 1.2rem; /* Ajuste o tamanho do texto conforme necessário */
+    color: #fff; /* Ajuste a cor do texto conforme necessário */
+}
