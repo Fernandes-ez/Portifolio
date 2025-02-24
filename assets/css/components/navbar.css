@@ -1,5 +1,5 @@
 .custom-navbar {
-    background:transparent !important;
+    background: transparent !important;
     padding: 1rem;
 }
 
@@ -26,4 +26,13 @@
     justify-content: center;
     margin-right: auto;
     font-size: large;
+}
+
+@media (max-width: 768px) {
+    #logo img {
+        height: 50px;
+    }
+    .custom-navbar .nav-link {
+        margin-right: 0.5rem;
+    }
 }

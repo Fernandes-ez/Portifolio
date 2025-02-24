@@ -1,0 +1,119 @@
+.projetos {
+    width: 100%;
+    min-height: 80vh;
+    margin-top: 15vh;
+    padding: 40px 0;
+}
+
+.carousel-inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.carousel-item {
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh;
+}
+
+.carousel-item img {
+    padding: 10vh 5vh 10vh 5vh;
+}
+
+.carousel-item:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item.active {
+    display: flex;
+}
+
+.carousel-card {
+    background: radial-gradient(circle at center, #4a0072, #0a001a);
+    opacity: 0.8;
+    border-radius: 10px;
+    padding: 30px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 15px purple;
+    width: 40%;
+    height: 600px;
+    max-width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel-card h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.carousel-card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.carousel-card img.carousel-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.github-btn {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+}
+
+.github-btn:hover {
+    background-color: #333333;
+    border-color: #333333;
+}
+
+.btn-video {
+    background-color: #be7abb;
+    color: #ffffff;
+}
+
+.btn-video:hover {
+    background-color: #4a0072;
+    transition: 0.5s;
+    color: #be7abb;
+}
+
+.gif {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .carousel-card {
+        width: 80%;
+        height: auto;
+        padding: 20px;
+    }
+    .carousel-card h1 {
+        font-size: 1.5rem;
+    }
+    .carousel-card p {
+        font-size: 0.9rem;
+    }
+    .carousel-card img.carousel-image {
+        max-width: 200px;
+    }
+}

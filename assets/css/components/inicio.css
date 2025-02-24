@@ -1,21 +1,21 @@
-.inicio{
+.inicio {
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: center;
     z-index: 2;
 }
-.inicioTitulo{
+.inicioTitulo {
     color: aliceblue;
     padding: 2vh 0 2vh 20vh;
 }
-.inicioSubtitulo{
+.inicioSubtitulo {
     color: aliceblue;
     padding: 2vh 0 2vh 20vh;
     font-size: 1.5em;
 }
-#curriculoBtn{
+#curriculoBtn {
     padding: 1vh 2vh;
     background-color: #be7abb;
     color: aliceblue;
@@ -24,8 +24,17 @@
     margin: 2vh 0 2vh 20vh;
     cursor: pointer;
 }
-#curriculoBtn:hover{
+#curriculoBtn:hover {
     background-color: #4a0072;
     transition: 0.5s;
     color: #be7abb;
+}
+
+@media (max-width: 768px) {
+    .inicioTitulo, .inicioSubtitulo, #curriculoBtn {
+        padding: 2vh 0 2vh 5vh;
+    }
+    .inicioSubtitulo {
+        font-size: 1em;
+    }
 }

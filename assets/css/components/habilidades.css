@@ -1,5 +1,7 @@
 .habilidades {
     width: 100%;
+    /* Em telas grandes, você pode manter a altura em 100vh se quiser.
+       Mas pode ser mais seguro usar min-height em vez de height. */
     height: 100vh;
 }
 
@@ -15,7 +17,7 @@
 .devicons i {
     font-size: 5em;
     color: #be7abb;
-    transition: transform 0.3s ease; /* Adicione uma transição suave */
+    transition: transform 0.3s ease;
 }
 
 .devicons li {
@@ -27,7 +29,7 @@
 }
 
 .devicon-item:hover i {
-    transform: scale(1.2); /* Aumente o tamanho do ícone ao passar o mouse */
+    transform: scale(1.2);
 }
 
 .devicon-item {
@@ -38,12 +40,45 @@
 }
 
 .devicon-item i {
-    font-size: 3rem; /* Ajuste o tamanho do ícone conforme necessário */
+    font-size: 3rem;
     margin-bottom: 0.5rem;
     padding: 1rem;
 }
 
 .devicon-item span {
-    font-size: 1.2rem; /* Ajuste o tamanho do texto conforme necessário */
-    color: #fff; /* Ajuste a cor do texto conforme necessário */
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Estilos para telas até 768px */
+@media (max-width: 768px) {
+
+    /* Se quiser remover a altura fixa em telas pequenas: */
+    .habilidades {
+        height: auto; /* Ajusta de acordo com o conteúdo */
+    }
+
+    /* Ajusta tamanho dos ícones */
+    .devicons i {
+        font-size: 3em;
+    }
+    .devicon-item i {
+        font-size: 2rem;
+    }
+    .devicon-item span {
+        font-size: 1rem;
+    }
+
+    /* Para o carrossel especificamente, forçar os ícones em linha */
+    #habilidadesCarousel .devicons {
+        flex-direction: row;
+        flex-wrap: nowrap;       /* Para evitar quebrar linha */
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Reduz um pouco a margem para não ficar muito “espremido” */
+    #habilidadesCarousel .devicons li {
+        margin: 10px;
+    }
 }

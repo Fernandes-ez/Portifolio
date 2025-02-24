@@ -12,7 +12,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
     </style>
-
+    <script src="https://kit.fontawesome.com/f0cffb6662.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -33,10 +34,10 @@
                         <a class="nav-link" href="#hab">Habilidades</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Projetos</a>
+                        <a class="nav-link" href="#prj">Projetos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contato</a>
+                        <a class="nav-link" href="#ctt">Contato</a>
                     </li>
                 </ul>
             </div>
@@ -56,16 +57,102 @@
             Sobre mim
         </h1>
         <p class="textSM">Meu nome é Enzo Fernandes Dantas, tenho 19 anos, sou apaixonado em estudar programação,
-            principalmente back-end, estudo atualmente na <a href="https://fateczl.cps.sp.gov.br">Fatec Zona Leste</a>
-            no curso Desenvolvimento de Software Multiplataforma. Moro na zona leste de São Paulo. Estou trabalhando no
+            principalmente back-end. Comecei meus estudos sozinho por volta de 2023, desde então não parei de estudar, atualmenteestou cursando Desenvolvimento de Software Multiplataforma na <a href="https://fateczl.cps.sp.gov.br">Fatec Zona Leste</a>. Moro na zona leste de São Paulo. Estou trabalhando no
             momento como estagiário de QA desde julho de 2024. Minha meta atual é me tornar um desenvolvedor back-end
             profissionalmente.</p>
     </section>
     <section id="hab" class="habilidades">
         <h1 class="title">Minhas habilidades</h1>
-        <p class="text">Nesta parte estão exibidas as linguagens de programação e ferramentas quais eu tenho experiência
-        </p>
-        <ul class="devicons">
+        <p class="text">Nesta parte estão exibidas as linguagens de programação e ferramentas quais eu tenho experiência</p>
+        <div id="habilidadesCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <ul class="devicons">
+                        <li class="devicon-item">
+                            <i class="devicon-java-plain"></i>
+                            <span>Java</span>
+                        </li>
+                        <li class="devicon-item">
+                            <i class="devicon-javascript-plain"></i>
+                            <span>JavaScript</span>
+                        </li>
+                        <li class="devicon-item">
+                            <i class="devicon-nodejs-plain"></i>
+                            <span>Node.JS</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="carousel-item">
+                    <ul class="devicons">
+                        <li class="devicon-item">
+                            <i class="devicon-react-original"></i>
+                            <span>React</span>
+                        </li>
+                        <li class="devicon-item">
+                            <i class="devicon-spring-original"></i>
+                            <span>Spring</span>
+                        </li>
+                        <li class="devicon-item">
+                            <i class="devicon-k6-original"></i>
+                            <span>K6</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="carousel-item">
+                    <ul class="devicons">
+                        <li class="devicon-item">
+                            <i class="devicon-html5-plain"></i>
+                            <span>HTML</span>
+                        </li>
+                        <li class="devicon-item">
+                            <i class="devicon-css3-plain"></i>
+                            <span>CSS</span>
+                        </li>
+                        <li class="devicon-item">
+                            <i class="devicon-bootstrap-plain"></i>
+                            <span>Bootstrap</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="carousel-item">
+                    <ul class="devicons">
+                        <li class="devicon-item">
+                            <i class="devicon-mysql-original"></i>
+                            <span>MySQL</span>
+                        </li>
+                        <li class="devicon-item">
+                            <i class="devicon-mongodb-plain"></i>
+                            <span>MongoDB</span>
+                        </li>
+                        <li class="devicon-item">
+                            <i class="devicon-git-plain"></i>
+                            <span>Git</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="carousel-item">
+                    <ul class="devicons">
+                        <li class="devicon-item">
+                            <i class="devicon-figma-plain"></i>
+                            <span>Figma</span>
+                        </li>
+                        <li class="devicon-item">
+                            <i class="devicon-photoshop-plain"></i>
+                            <span>Photoshop</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#habilidadesCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#habilidadesCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <ul class="devicons d-none d-md-flex">
             <li class="devicon-item">
                 <i class="devicon-java-plain"></i>
                 <span>Java</span>
@@ -100,7 +187,7 @@
             </li>
             <li class="devicon-item">
                 <i class="devicon-bootstrap-plain"></i>
-                <span>Boostrap</span>
+                <span>Bootstrap</span>
             </li>
             <li class="devicon-item">
                 <i class="devicon-mysql-original"></i>
@@ -122,10 +209,90 @@
                 <i class="devicon-photoshop-plain"></i>
                 <span>Photoshop</span>
             </li>
-
         </ul>
     </section>
-    <section id="prj" class="projetos"></section>
+    <section id="prj" class="projetos">
+        <h1 class="title">Projetos</h1>
+        <p class="text"> Como um bom desenvolvedor, estou trabalhando em alguns projetos, tanto para estudos pessoasis
+            como para faculdade, aqui abaixo estão alguns dos meus projetos:</p>
+        <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active d-flex flex-column justify-content-center align-items-center"
+                    data-bs-interval="5000">
+                    <div class="carousel-card">
+                        <h1>Buku</h1>
+                        <p>O Buku é uma plataforma para troca de livros usados, incentivando a leitura e a
+                            sustentabilidade. Os usuários encontram títulos de interesse, enviam propostas, e o
+                            proprietário pode aceitar ou recusar. Após a confirmação, os contatos são compartilhados
+                            para organizar a troca. </p>
+                        <h5>Minha participação:</h5>
+                        <p>Desenvolvimento do back-end do sistema.</p>
+                        <img src="/assets/images/Logo-Buku.png" alt="Logo Buku" class="carousel-image">
+                        <div class="btn-group">
+                            <a href="https://github.com/Celegattodev/2Buku.com" class="btn github-btn"
+                                aria-current="page">
+                                <i class="devicon-github-original"></i>
+                                Github
+                            </a>
+                            <a href="https://drive.google.com/file/d/1VUmU8k5D4F4N2V9q_krsFF_lVChq6pAW/view?usp=sharing"
+                                class="btn btn-video">Vídeo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item d-flex flex-column justify-content-center align-items-center"
+                    data-bs-interval="5000">
+                    <div class="carousel-card">
+                        <h1>Projeto em andamento!</h1>
+                        <p>Aguarde o lançamento de próximos projetos!</p>
+                        <img src="https://i.pinimg.com/originals/61/9c/aa/619caa11628eb87711118158067faa25.gif" alt=" "
+                            class="carousel-image">
+                    </div>
+                </div>
+                <div class="carousel-item d-flex flex-column justify-content-center align-items-center"
+                    data-bs-interval="5000">
+                    <div class="carousel-card">
+                        <h1>Projeto em andamento!</h1>
+                        <p>Aguarde o lançamento de próximos projetos!</p>
+                        <img src="https://i.pinimg.com/originals/61/9c/aa/619caa11628eb87711118158067faa25.gif"
+                            alt="GIF Example" class="carousel-image">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    <section id="ctt" class="contato">
+        <h1 class="title"> Contato</h1>
+        <p class="text">Caso você tenha gostado dos meus projetos, pode entrar em contato comigo atravez de alguma opção
+            a seguir:</p>
+            <ul class="listaCTT">
+                <li><a href="https://w.app/yzqxp6"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="mailto:fernandesdenzo223@gmail.com?subject=Desenvolvimento+de+sistemas"><i class="fa-solid fa-envelope"></i></a></li>
+            </ul>
+            <p class="textSiga">E não esqueça de me seguir!</p>
+            <ul class="redes">
+                <li><a href="https://github.com/Fernandes-ez"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/fernandes-ez/"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/fernandes_223_/"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
