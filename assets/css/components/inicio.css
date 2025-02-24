@@ -1,20 +1,30 @@
 .inicio {
     width: 100%;
-    height: 100vh;
+    height: 100vh; /* A tela de início sempre ocupará 100% da altura da viewport */
     display: flex;
     justify-content: flex-start;
     align-items: center;
     z-index: 2;
+    /* background: ...; Se desejar definir uma cor ou imagem de fundo */
 }
+
+/* Título */
 .inicioTitulo {
     color: aliceblue;
+    font-size: 2rem;
     padding: 2vh 0 2vh 20vh;
+    margin: 0;
 }
+
+/* Subtítulo */
 .inicioSubtitulo {
     color: aliceblue;
-    padding: 2vh 0 2vh 20vh;
     font-size: 1.5em;
+    padding: 2vh 0 2vh 20vh;
+    margin: 0;
 }
+
+/* Botão de baixar currículo */
 #curriculoBtn {
     padding: 1vh 2vh;
     background-color: #be7abb;
@@ -23,18 +33,46 @@
     border-radius: 5px;
     margin: 2vh 0 2vh 20vh;
     cursor: pointer;
+    font-size: 1rem; /* Ajuste o tamanho da fonte se desejar */
 }
+
 #curriculoBtn:hover {
     background-color: #4a0072;
     transition: 0.5s;
     color: #be7abb;
 }
 
+/* ============================= */
+/*       RESPONSIVIDADE         */
+/* ============================= */
 @media (max-width: 768px) {
-    .inicioTitulo, .inicioSubtitulo, #curriculoBtn {
-        padding: 2vh 0 2vh 5vh;
+
+    /* A seção de início passa a ser em coluna para empilhar título, subtítulo e botão */
+    .inicio {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Mantém a tela cheia no mobile */
+        padding: 0 2vw;
     }
+    
+    .inicioTitulo {
+        font-size: 1.5rem;
+        padding: 1vh 0;
+        text-align: center;
+    }
+    
     .inicioSubtitulo {
-        font-size: 1em;
+        font-size: 1.2rem;
+        padding: 1vh 0;
+        text-align: center;
+    }
+    
+    /* Botão centralizado */
+    #curriculoBtn {
+        display: block;
+        margin: 2vh auto; /* Centraliza horizontalmente */
+        padding: 1vh 2vh;
+        font-size: 1rem;
     }
 }

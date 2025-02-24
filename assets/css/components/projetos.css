@@ -1,3 +1,4 @@
+/* SEÇÃO DE PROJETOS */
 .projetos {
     width: 100%;
     min-height: 80vh;
@@ -5,93 +6,98 @@
     padding: 40px 0;
 }
 
+/* Removido o display: flex do .carousel-inner para não conflitar com o Bootstrap */
+/* e permitir que apenas o item ativo seja mostrado. */
 .carousel-inner {
-    display: flex;
-    align-items: center;
-    height: 100%;
+    /* Se quiser centralizar verticalmente os slides, pode usar align-items-center,
+       mas evite forçar display: flex aqui. */
 }
 
 .carousel-item {
+    /* Mantém um espaço mínimo, se desejar */
     min-height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 5vh;
 }
 
+/* Ajuste para não criar espaçamento exagerado na imagem fora do card */
 .carousel-item img {
-    padding: 10vh 5vh 10vh 5vh;
+    padding: 0; 
 }
 
-.carousel-item:first-child {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.carousel-item.active {
-    display: flex;
-}
-
+/* ========== ESTILIZAÇÃO DO CARD NO CAROUSEL ========== */
 .carousel-card {
-    background: radial-gradient(circle at center, #4a0072, #0a001a);
-    opacity: 0.8;
-    border-radius: 10px;
-    padding: 30px;
-    color: white;
-    text-align: center;
-    box-shadow: 0 0 15px purple;
-    width: 40%;
-    height: 600px;
-    max-width: 40%;
-    margin: 0 auto;
+    /* Gradiente sutil de roxo para azul escuro, com opacidade para dar profundidade */
+    background: linear-gradient(
+        160deg, 
+        rgba(74, 0, 114, 0.9) 0%, 
+        rgba(10, 0, 26, 0.9) 100%
+    );
+    border-radius: 15px;
+    /* Removido o min-height para o card ajustar à quantidade de texto */
+    /* Largura maior para não “apertar” o texto */
+    width: 60%;
+    max-width: 800px;
+    margin: 2rem auto; /* Centraliza horizontalmente */
+    padding: 2rem;
+    color: #fff;
+    /* Box-shadow mais sutil */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    /* Para alinhar o conteúdo verticalmente, mas sem forçar texto no centro */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    gap: 1rem; /* Espaço entre elementos internos */
 }
 
+/* Título dentro do card */
 .carousel-card h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
+    text-align: center; /* Centralizado apenas o título */
 }
 
+/* Parágrafos dentro do card */
 .carousel-card p {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
     margin-bottom: 1rem;
+    text-align: justify; /* Deixa o texto mais agradável de ler */
 }
 
+/* Imagens dentro do card */
 .carousel-card img.carousel-image {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto;       /* Centraliza a imagem */
+    max-width: 300px;     /* Tamanho máximo */
+    width: 100%;          /* Ajusta-se ao tamanho do container */
+    height: auto;
+    border-radius: 8px;   /* Cantos levemente arredondados */
 }
 
+/* BOTÕES DE GITHUB E VÍDEO */
 .github-btn {
-    background-color: #000000;
-    border-color: #000000;
-    color: #ffffff;
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+    transition: 0.3s ease;
 }
 
 .github-btn:hover {
-    background-color: #333333;
-    border-color: #333333;
+    background-color: #333;
+    border-color: #333;
 }
 
 .btn-video {
     background-color: #be7abb;
-    color: #ffffff;
+    color: #fff;
+    transition: 0.3s ease;
 }
 
 .btn-video:hover {
     background-color: #4a0072;
-    transition: 0.5s;
     color: #be7abb;
 }
 
+/* CASO TENHA GIFS OU OUTRAS IMAGENS MAIORES FORA DO CARD */
 .gif {
     width: 100%;
     max-width: 600px;
@@ -101,19 +107,28 @@
     object-fit: cover;
 }
 
+/* ========== RESPONSIVIDADE PARA TELAS MENORES ========== */
 @media (max-width: 768px) {
     .carousel-card {
-        width: 80%;
-        height: auto;
-        padding: 20px;
+        width: 90%;
+        max-width: 500px;  /* Reduz a largura máxima em telas menores */
+        margin: 2rem auto;
+        padding: 1.5rem;
     }
+
     .carousel-card h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
+
     .carousel-card p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
+
     .carousel-card img.carousel-image {
-        max-width: 200px;
+        max-width: 250px;
+    }
+
+    .carousel-item {
+        padding: 2vh;
     }
 }
