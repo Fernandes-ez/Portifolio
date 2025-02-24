@@ -38,6 +38,59 @@
     color: #be7abb;
 }
 
+.modal-content {
+    background: radial-gradient(circle at center, #4a0072, #0a001a);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px purple;
+    color: white;
+  }
+
+  .modal-header {
+    border-bottom: none;
+  }
+
+  .modal-title {
+    font-family: 'Anta', sans-serif;
+    font-size: 1.5rem;
+  }
+
+  .modal-body {
+    font-size: 1.2rem;
+  }
+
+  .modal-footer {
+    border-top: none;
+  }
+
+  .modal-footer .btn-primary {
+    background-color: #be7abb;
+    border: none;
+    transition: 0.5s;
+
+  }
+
+  .modal-footer .btn-secondary {
+    background-color: #be7abb;
+    border: none;
+    transition: 0.5s;
+  }
+
+  .modal-footer .btn-primary:hover {
+    background-color: #4a0072;
+    color: #be7abb;
+  }
+
+  .modal-footer .btn-secondary:hover {
+    background-color: #4a0072;
+    color: #be7abb;
+  }
+
+  /* Opcional: inverter a cor do ícone de fechar para combinar com o fundo */
+  .btn-close {
+    filter: invert(1);
+  }
+
 @media (max-width: 768px) {
 
     .inicio {
