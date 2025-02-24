@@ -1,7 +1,5 @@
 .habilidades {
     width: 100%;
-    /* Em telas grandes, você pode manter a altura em 100vh se quiser.
-       Mas pode ser mais seguro usar min-height em vez de height. */
     height: 100vh;
 }
 
@@ -50,15 +48,12 @@
     color: #fff;
 }
 
-/* Estilos para telas até 768px */
 @media (max-width: 768px) {
 
-    /* Se quiser remover a altura fixa em telas pequenas: */
     .habilidades {
-        height: auto; /* Ajusta de acordo com o conteúdo */
+        height: auto; 
     }
 
-    /* Ajusta tamanho dos ícones */
     .devicons i {
         font-size: 3em;
     }
@@ -69,15 +64,13 @@
         font-size: 1rem;
     }
 
-    /* Para o carrossel especificamente, forçar os ícones em linha */
     #habilidadesCarousel .devicons {
         flex-direction: row;
-        flex-wrap: nowrap;       /* Para evitar quebrar linha */
+        flex-wrap: nowrap;      
         justify-content: center;
         align-items: center;
     }
 
-    /* Reduz um pouco a margem para não ficar muito “espremido” */
     #habilidadesCarousel .devicons li {
         margin: 10px;
     }

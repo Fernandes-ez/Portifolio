@@ -1,19 +1,31 @@
-particlesJS('particles-js', {
-  particles: {
-    number: { value: 100 },
-    color: { value: "#ffffff" },
-    shape: { type: "circle" },
-    opacity: { value: 0.7 },
-    size: { value: 2 },
-    move: { speed: 1 }
-  }
-});
+document.addEventListener("DOMContentLoaded", function() {
+  // Inicializa o particlesJS
+  particlesJS('particles-js', {
+    particles: {
+      number: { value: 100 },
+      color: { value: "#ffffff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.7 },
+      size: { value: 2 },
+      move: { speed: 1 }
+    }
+  });
 
-// ScrollReveal configuration
-ScrollReveal().reveal('.inicioTitulo', { delay: 200 });
-ScrollReveal().reveal('.inicioSubtitulo', { delay: 400 });
-ScrollReveal().reveal('#curriculoBtn', { delay: 600 });
-ScrollReveal().reveal('.sobreMim', { delay: 800 });
-ScrollReveal().reveal('.habilidades', { delay: 1000 });
-ScrollReveal().reveal('.projetos', { delay: 1200 });
-ScrollReveal().reveal('.contato', { delay: 1400 });
+  // Configuração global do ScrollReveal com reset habilitado
+  const sr = ScrollReveal({
+    reset: true,        
+    distance: '50px',     
+    duration: 1000,       
+    easing: 'ease-out',   
+    origin: 'bottom',     
+    viewFactor: 0.2       
+  });
+
+  sr.reveal('.inicioTitulo', { delay: 200 });
+  sr.reveal('.inicioSubtitulo', { delay: 400 });
+  sr.reveal('#curriculoBtn', { delay: 600 });
+  sr.reveal('.sobreMim', { delay: 800 });
+  sr.reveal('.habilidades', { delay: 1000 });
+  sr.reveal('.projetos', { delay: 1200 });
+  sr.reveal('.contato', { delay: 1400 });
+});
