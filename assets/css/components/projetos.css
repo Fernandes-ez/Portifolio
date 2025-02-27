@@ -3,7 +3,9 @@
     min-height: 80vh;
     margin-top: 15vh;
     padding: 40px 0;
+    box-sizing: border-box; 
 }
+
 
 .carousel-item {
     min-height: 300px;

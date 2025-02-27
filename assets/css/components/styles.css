@@ -49,3 +49,6 @@ body {
         font-size: 1em;
     }
 }
+section {
+    margin-bottom: 2rem; /* Espaçamento entre seções */
+}
