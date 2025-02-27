@@ -30,8 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
   sr.reveal('.contato', { delay: 1400 });
 });
 
-const token = '9be9b0beccb0cec1d5caee02a89aea06cac9774c3e7d22e14fc758fe52464462';
-const apiUrl = `https://www.alura.com.br/api/dashboard/${token}`;
+const apiUrl = `https://www.alura.com.br/api/dashboard/e5f088528111a094993d30275832d215e7b63eb80bdd73c61360b0db5d8e0cbf`;
 
 fetch(apiUrl)
   .then(response => response.json())
