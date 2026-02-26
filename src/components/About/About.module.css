@@ -1,0 +1,46 @@
+.about {
+  display: grid;
+  gap: 48px;
+}
+
+.header {
+  max-width: 640px;
+}
+
+.content {
+  display: grid;
+  gap: 56px;
+}
+
+.description {
+  display: grid;
+  gap: 20px;
+  max-width: 740px;
+  font-size: 1.05rem;
+}
+
+.description p {
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.approach {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.approach strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--secondary);
+}
+
+.approach p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}

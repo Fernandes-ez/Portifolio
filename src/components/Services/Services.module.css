@@ -1,0 +1,41 @@
+.services {
+  display: grid;
+  gap: 48px;
+}
+
+.header {
+  max-width: 640px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 48px;
+  padding-top: 24px;
+}
+
+.service h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.service ul {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.service li {
+  color: var(--text-muted);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.service li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+}
