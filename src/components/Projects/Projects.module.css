@@ -1,0 +1,93 @@
+.projects {
+  display: grid;
+  gap: 48px;
+  overflow: hidden;
+}
+
+.header {
+  max-width: 640px;
+}
+
+.swipeHint {
+  display: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 12px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.list {
+  display: grid;
+  gap: 2px;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border-soft);
+  transition: all 0.3s ease;
+}
+
+.project.comingSoon {
+  opacity: 1;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.project:hover {
+  padding-left: 16px;
+}
+
+.projectNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--secondary);
+  opacity: 0.3;
+  font-family: "Fraunces", serif;
+}
+
+.projectContent {
+  display: grid;
+  gap: 16px;
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.projectHeader h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.year {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.project p {
+  color: var(--text-muted);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.stack {
+  font-size: 0.9rem;
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.comingSoon {
+  opacity: 0.8;
+}
+
+.comingSoon h3 {
+  color: var(--secondary);
+  font-style: italic;
+}

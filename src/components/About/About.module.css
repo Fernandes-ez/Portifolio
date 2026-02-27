@@ -1,0 +1,74 @@
+.about {
+  display: grid;
+  gap: 48px;
+}
+
+.header {
+  max-width: 640px;
+}
+
+.content {
+  display: grid;
+  gap: 56px;
+}
+
+.description {
+  display: grid;
+  gap: 20px;
+  max-width: 740px;
+  font-size: 1.05rem;
+}
+
+.description p {
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.description a {
+  color: var(--secondary);
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.description a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--secondary);
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.description a:hover {
+  color: var(--primary-hover);
+}
+
+.description a:hover::after {
+  opacity: 1;
+}
+
+.approach {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.approach strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--secondary);
+}
+
+.approach p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
