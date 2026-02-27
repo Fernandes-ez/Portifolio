@@ -7,17 +7,51 @@
   max-width: 640px;
 }
 
+.subtitle {
+  margin-top: 16px;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
   padding-top: 24px;
+}
+
+.service {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
+  transition: all 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-4px);
+  border-color: var(--secondary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.serviceIcon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  display: inline-block;
 }
 
 .service h3 {
   font-size: 1.3rem;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   font-weight: 600;
+}
+
+.serviceDescription {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
 }
 
 .service ul {

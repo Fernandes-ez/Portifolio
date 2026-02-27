@@ -117,26 +117,25 @@ function Hero() {
       )}
       <div className={`container ${styles.hero}`}>
         <div className={styles.content}>
-          <span className="eyebrow">Frontend Freelancer</span>
-          <h1>Transformo ideias em produtos digitais que geram resultado.</h1>
+          <span className="eyebrow">Desenvolvedor Full Stack | Freelancer</span>
+          <h1>Tecnologia que transforma presença em clientes</h1>
           <p>
-            Desenvolvimento de interfaces web modernas focado em performance,
-            conversao e experiencia do usuario. Do planejamento ao deploy.
+            Desenvolvimento de sites, sistemas e automações com IA para escalar sua presença digital.
           </p>
           <div className={styles.actions}>
             <a
-              href="#projects"
+              href="#contact"
               className={styles.primary}
               onClick={handleScrollClick}
             >
-              Ver projetos
+              Solicitar orçamento
             </a>
             <a
-              href="#contact"
+              href="#projects"
               className={styles.secondary}
               onClick={handleScrollClick}
             >
-              Solicitar orcamento
+              Ver projetos
             </a>
           </div>
         </div>

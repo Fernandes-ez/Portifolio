@@ -5,28 +5,23 @@ function About() {
     <div className={`container ${styles.about}`}>
       <div className={styles.header}>
         <span className="eyebrow">Sobre</span>
-        <h2 className="sectionTitle">Entrego solucoes completas de frontend</h2>
+        <h2 className="sectionTitle">
+          Desenvolvedor Full Stack com experiência prática
+        </h2>
       </div>
       <div className={styles.content}>
         <div className={styles.description}>
           <p>
-            Trabalho com empresas e profissionais que precisam transformar
-            ideias em produtos digitais funcionais. Do wireframe ao deploy, foco
-            em codigo limpo, performance e experiencia do usuario.
-          </p>
-          <p>
-            Minha stack principal: React, TypeScript, Next.js, Tailwind.
-            Experiencia com integracao de APIs, autenticacao, otimizacao SEO e
-            deploy em ambientes modernos.
-          </p>
+            Sou Enzo Fernandes, desenvolvedor Full Stack com experiência prática em projetos reais. Estou cursando Desenvolvimento de Software Multiplataforma na <a href="https://fateczl.cps.sp.gov.br">FATEC Zona Leste</a>.Já participei da construção de plataformas web com foco em gestão, organização de informações e melhoria de fluxos de atendimento, além de projetos voltados à presença digital e captação de clientes.</p>
+            <p>Meu trabalho é guiado pela ideia de que tecnologia deve ser uma ferramenta estratégica — não apenas visual, mas funcional, escalável e alinhada aos objetivos do negócio.</p>
         </div>
         <div className={styles.approach}>
           <div>
-            <strong>Analise</strong>
+            <strong>Análise</strong>
             <p>Entendo o problema real antes de codar qualquer linha</p>
           </div>
           <div>
-            <strong>Execucao</strong>
+            <strong>Execução</strong>
             <p>Desenvolvimento iterativo com feedback constante</p>
           </div>
           <div>

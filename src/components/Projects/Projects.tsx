@@ -2,25 +2,11 @@ import styles from "./Projects.module.css";
 
 const projects = [
   {
-    title: "E-commerce responsivo",
+    title: "Em breve",
     description:
-      "Plataforma completa com carrinho, checkout e painel admin. Integracao com Stripe e gestao de estoque.",
-    stack: "Next.js · TypeScript · Stripe · Prisma",
+      "Estou trabalhando em novos projetos incríveis. Em breve compartilharei meus trabalhos mais recentes aqui.",
+    stack: "Novidades em desenvolvimento",
     year: "2026",
-  },
-  {
-    title: "Dashboard analytics",
-    description:
-      "Interface para visualizacao de metricas em tempo real. Graficos interativos e exportacao de relatorios.",
-    stack: "React · Chart.js · TailwindCSS",
-    year: "2025",
-  },
-  {
-    title: "Landing page SaaS",
-    description:
-      "Site institucional com foco em conversao. Animacoes suaves, SEO otimizado e integracao com CRM.",
-    stack: "React · Framer Motion · Vercel",
-    year: "2025",
   },
 ];
 
@@ -33,7 +19,10 @@ function Projects() {
       </div>
       <div className={styles.list}>
         {projects.map((project, index) => (
-          <article key={project.title} className={styles.project}>
+          <article
+            key={project.title}
+            className={`${styles.project} ${styles.comingSoon}`}
+          >
             <div className={styles.projectNumber}>0{index + 1}</div>
             <div className={styles.projectContent}>
               <div className={styles.projectHeader}>

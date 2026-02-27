@@ -3,6 +3,8 @@
   min-height: 70vh;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  width: 100%;
 }
 
 .particles {

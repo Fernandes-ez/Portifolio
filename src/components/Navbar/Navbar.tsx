@@ -1,4 +1,5 @@
 import styles from "./Navbar.module.css";
+import logo from "../../assets/images/ezDevLogo.png";
 
 const links = [
   { label: "Projetos", href: "#projects" },
@@ -38,7 +39,7 @@ function Navbar() {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          Enzo Duarte
+          <img src={logo} alt="ezDev Logo" />
         </a>
         <nav className={styles.nav}>
           {links.map((link) => (

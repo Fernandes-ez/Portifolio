@@ -24,6 +24,34 @@
   line-height: 1.8;
 }
 
+.description a {
+  color: var(--secondary);
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.description a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--secondary);
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.description a:hover {
+  color: var(--primary-hover);
+}
+
+.description a:hover::after {
+  opacity: 1;
+}
+
 .approach {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

@@ -1,9 +1,27 @@
 import styles from "./Stack.module.css";
 
 const stack = {
-  frontend: ["React", "Next.js", "TypeScript", "TailwindCSS", "Vite"],
-  backend: ["Node.js", "Express", "Prisma", "PostgreSQL"],
-  tools: ["Git", "Figma", "Vercel", "Docker"],
+  frontend: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "JavaScript",
+    "HTML5",
+    "CSS3",
+    "Bootstrap",
+  ],
+  backend: ["Node.js", "Express.js", ".NET", "C#", "Java", "Python"],
+  database: ["MySQL", "MongoDB", "MongoDB Atlas", "SQL"],
+  tools: [
+    "Git",
+    "GitHub",
+    "VSCode",
+    "Postman",
+    "Jest",
+    "Vercel",
+    "Render",
+    "Netlify",
+  ],
 };
 
 function Stack() {

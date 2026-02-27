@@ -5,7 +5,7 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.inner}`}>
         <span className={styles.copy}>
-          © 2026 Enzo Duarte. Desenvolvido com React + TypeScript
+          © 2026 ezf.dev
         </span>
       </div>
     </footer>
