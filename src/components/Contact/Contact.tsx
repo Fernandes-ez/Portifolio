@@ -99,7 +99,7 @@ function Contact() {
               <span>Enzo Fernandes Dantas</span>
             </a>
             <a
-              href="https://instagram.com/ezf.dev"
+              href="https://instagram.com/ezf.tech"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.method}
