@@ -105,7 +105,7 @@ function Contact() {
               className={styles.method}
             >
               <strong>Instagram</strong>
-              <span>ezf.dev</span>
+              <span>ezf.tech</span>
             </a>
           </div>
         </div>
