@@ -90,12 +90,24 @@ const processSteps = [
 const portfolioItems = [
   {
     title: "Aqua Fit Club",
+    type: "Automação",
     problem: "Leads chegavam pelo atendimento sem triagem inicial, exigindo mais tempo da equipe.",
     solution:
       "Criamos um chatbot para qualificar o contato, organizar as informações e redirecionar cada lead para o atendimento certo.",
     result:
       "O fluxo comercial ficou mais claro, com contatos melhor direcionados e menos esforço manual no primeiro atendimento.",
     tags: ["Atendimento", "Qualificação", "Organização comercial"],
+  },
+  {
+    title: "Aqua Fit Club",
+    type: "Site",
+    problem: "A academia não tinha uma página própria para se apresentar e captar novos alunos.",
+    solution:
+      "Desenvolvemos uma landing page para apresentar a estrutura, os planos e facilitar o primeiro contato de quem visita.",
+    result:
+      "Uma presença digital própria, com apresentação clara da academia e mais um canal para converter visitantes em alunos.",
+    tags: ["Landing Page", "Presença digital", "Conversão"],
+    link: "https://aquafitclub.com.br",
   },
 ];
 
@@ -618,10 +630,10 @@ function App() {
 
             <div className={styles.portfolioGrid}>
               {portfolioItems.map((project) => (
-                <article key={project.title} className={styles.portfolioCard}>
+                <article key={`${project.title}-${project.type}`} className={styles.portfolioCard}>
                   <div className={styles.portfolioMeta}>
                     <span className={styles.panelTag}>{project.tags[0]}</span>
-                    <span className={styles.portfolioType}>Demonstração</span>
+                    <span className={styles.portfolioType}>{project.type}</span>
                   </div>
                   <h3>{project.title}</h3>
                   <dl className={styles.caseList}>
@@ -643,6 +655,16 @@ function App() {
                       <span key={tag}>{tag}</span>
                     ))}
                   </div>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.portfolioLink}
+                    >
+                      Visitar site ↗
+                    </a>
+                  )}
                 </article>
               ))}
             </div>

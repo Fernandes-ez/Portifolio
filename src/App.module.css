@@ -660,6 +660,21 @@
   font-size: 0.82rem;
 }
 
+.portfolioLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  color: var(--secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.portfolioLink:hover {
+  text-decoration: underline;
+}
+
 .aboutGrid {
   display: grid;
   grid-template-columns: 1fr 0.95fr;
