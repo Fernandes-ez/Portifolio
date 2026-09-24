@@ -1,14 +1,28 @@
 :root {
-  --bg-main: #141427;
-  --bg-card: #1a1a35;
+  /* Paleta ezf.tech */
+  --ink: #1b1026;
+  --ink-raised: #261835;
+  --paper: #eeeaf3;
+  --violet: #8a12b4;
+  --lilac: #b98be0;
+  --amber: #f2b233;
 
-  --primary: #9112bc;
+  --on-ink-muted: #b9abcb;
+  --on-paper-muted: #5c5070;
+  --line-ink: rgba(185, 139, 224, 0.22);
+  --line-paper: rgba(27, 16, 38, 0.14);
+
+  --font-display: "Unbounded", system-ui, sans-serif;
+  --font-body: "Instrument Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Aliases usados pelos componentes antigos */
+  --bg-main: var(--ink);
+  --bg-card: var(--ink-raised);
+  --primary: var(--violet);
   --primary-hover: #a41fd1;
-
-  --secondary: #ae75da;
-
+  --secondary: var(--lilac);
   --text-main: #ffffff;
-  --text-muted: #cfcfe6;
-
-  --border-soft: #ae75da20;
+  --text-muted: var(--on-ink-muted);
+  --border-soft: var(--line-ink);
 }

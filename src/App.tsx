@@ -1,9 +1,9 @@
-import { useEffect, useMemo, useState, type MouseEvent, type ReactNode } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { type ISourceOptions } from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim";
+import { useEffect } from "react";
 import logo from "./assets/images/ezTechLogo.png";
 import styles from "./App.module.css";
+
+const WHATSAPP = "https://wa.me/5511991084238";
+const EMAIL = "ezftech.contato@gmail.com";
 
 const navItems = [
   { label: "Problemas", href: "#problems" },
@@ -58,23 +58,23 @@ const solutions = [
 
 const benefits = [
   {
-    title: "Mais organização",
+    title: "organização",
     description: "Informações centralizadas e menos perda de contexto entre canais, equipe e clientes.",
   },
   {
-    title: "Mais produtividade",
+    title: "produtividade",
     description: "Menos tarefas repetitivas e mais tempo para a equipe focar no atendimento certo.",
   },
   {
-    title: "Mais tempo",
+    title: "tempo",
     description: "Processos mais simples para reduzir improviso, espera e retrabalho no dia a dia.",
   },
   {
-    title: "Mais oportunidades",
+    title: "oportunidades",
     description: "Leads melhor atendidos, qualificados e direcionados antes de esfriarem.",
   },
   {
-    title: "Mais profissionalismo",
+    title: "profissionalismo",
     description: "Uma experiência digital mais clara, confiável e preparada para crescer.",
   },
 ];
@@ -91,6 +91,7 @@ const portfolioItems = [
   {
     title: "Aqua Fit Club",
     type: "Automação",
+    mockup: "chat",
     problem: "Leads chegavam pelo atendimento sem triagem inicial, exigindo mais tempo da equipe.",
     solution:
       "Criamos um chatbot para qualificar o contato, organizar as informações e redirecionar cada lead para o atendimento certo.",
@@ -101,6 +102,7 @@ const portfolioItems = [
   {
     title: "Aqua Fit Club",
     type: "Site",
+    mockup: "site",
     problem: "A academia não tinha uma página própria para se apresentar e captar novos alunos.",
     solution:
       "Desenvolvemos uma landing page para apresentar a estrutura, os planos e facilitar o primeiro contato de quem visita.",
@@ -121,170 +123,101 @@ const differentiators = [
   "Aprendizado contínuo",
 ];
 
-const contactMethods = [
-  {
-    label: "WhatsApp",
-    value: "+55 11 94035-4855",
-    href: "https://wa.me/5511940354855",
-  },
-  {
-    label: "Email",
-    value: "fernandesdenzo223@gmail.com",
-    href: "mailto:fernandesdenzo223@gmail.com",
-  },
+const heroPromises = ["Atendimento inteligente", "Processos automatizados", "Mais produtividade"];
+
+const heroTrust = [
+  "Soluções personalizadas",
+  "Desenvolvimento sob medida",
+  "Atendimento próximo durante todo o projeto",
 ];
 
-type IconName = "zap" | "refresh" | "chart" | "instagram" | "globe" | "bot" | "route" | "inbox";
-
-const heroPromises = [
-  { icon: "zap", label: "Atendimento inteligente" },
-  { icon: "refresh", label: "Processos automatizados" },
-  { icon: "chart", label: "Mais produtividade" },
+const heroStats = [
+  { label: "Resultado", text: "Mais organização para sua operação" },
+  { label: "Processo", text: "Menos trabalho manual e menos retrabalho" },
+  { label: "Contato", text: "Mais leads qualificados com mais previsibilidade" },
 ];
+
+const signals = ["Cliente pede informações", "IA responde imediatamente", "Lead é qualificado"];
 
 const storySteps = [
-  {
-    icon: "instagram",
-    title: "Cliente entra pelo Instagram",
-    description: "O interesse vira conversa no canal onde ele já está.",
-  },
-  {
-    icon: "globe",
-    title: "Conhece sua empresa",
-    description: "Uma página clara explica a oferta e aumenta a confiança.",
-  },
-  {
-    icon: "bot",
-    title: "Recebe atendimento automático",
-    description: "A IA responde rápido, qualifica o lead e evita espera.",
-  },
-  {
-    icon: "route",
-    title: "É direcionado ao setor correto",
-    description: "A conversa segue no WhatsApp com contexto e prioridade.",
-  },
-  {
-    icon: "inbox",
-    title: "Sua equipe recebe tudo organizado",
-    description: "Dados, histórico e próximos passos ficam registrados.",
-  },
+  { title: "Cliente entra pelo Instagram", description: "O interesse vira conversa no canal onde ele já está." },
+  { title: "Conhece sua empresa", description: "Uma página clara explica a oferta e aumenta a confiança." },
+  { title: "Recebe atendimento automático", description: "A IA responde rápido, qualifica o lead e evita espera." },
+  { title: "É direcionado ao setor correto", description: "A conversa segue no WhatsApp com contexto e prioridade." },
+  { title: "Sua equipe recebe tudo organizado", description: "Dados, histórico e próximos passos ficam registrados." },
 ];
 
-function Icon({ name }: { name: IconName }) {
-  const paths: Record<IconName, ReactNode> = {
-    zap: <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" />,
-    refresh: (
-      <>
-        <path d="M21 12a9 9 0 0 1-15.2 6.5" />
-        <path d="M3 12A9 9 0 0 1 18.2 5.5" />
-        <path d="M3 19v-5h5" />
-        <path d="M21 5v5h-5" />
-      </>
-    ),
-    chart: (
-      <>
-        <path d="M4 19V5" />
-        <path d="M4 19h16" />
-        <path d="m7 15 4-4 3 3 5-7" />
-      </>
-    ),
-    instagram: (
-      <>
-        <rect x="4" y="4" width="16" height="16" rx="5" />
-        <circle cx="12" cy="12" r="3.5" />
-        <path d="M16.5 7.5h.01" />
-      </>
-    ),
-    globe: (
-      <>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M3 12h18" />
-        <path d="M12 3c2.3 2.5 3.5 5.5 3.5 9S14.3 18.5 12 21" />
-        <path d="M12 3c-2.3 2.5-3.5 5.5-3.5 9s1.2 6.5 3.5 9" />
-      </>
-    ),
-    bot: (
-      <>
-        <rect x="5" y="8" width="14" height="10" rx="3" />
-        <path d="M12 4v4" />
-        <path d="M9 13h.01" />
-        <path d="M15 13h.01" />
-        <path d="M10 18v2" />
-        <path d="M14 18v2" />
-      </>
-    ),
-    route: (
-      <>
-        <path d="M5 7a3 3 0 1 0 6 0 3 3 0 0 0-6 0Z" />
-        <path d="M13 17a3 3 0 1 0 6 0 3 3 0 0 0-6 0Z" />
-        <path d="M8 10v1a6 6 0 0 0 6 6" />
-      </>
-    ),
-    inbox: (
-      <>
-        <path d="M4 14 7 5h10l3 9" />
-        <path d="M4 14h5l2 3h2l2-3h5" />
-        <path d="M4 14v5h16v-5" />
-      </>
-    ),
-  };
-
+/* Chave vertical — o símbolo da marca, usado como abertura/fechamento e agrupamento. */
+function Brace({ className }: { className: string }) {
   return (
-    <svg
-      className={styles.icon}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      {paths[name]}
+    <svg className={className} viewBox="0 0 100 400" preserveAspectRatio="none" aria-hidden="true">
+      <path
+        d="M88 4C46 4 50 36 50 76v84c0 28-16 40-44 40 28 0 44 12 44 40v84c0 40-4 72 38 72"
+        fill="none"
+        stroke="currentColor"
+        pathLength={1}
+        vectorEffect="non-scaling-stroke"
+      />
     </svg>
   );
 }
 
-function scrollToSection(href: string) {
-  const targetId = href.replace("#", "");
-  const element = document.getElementById(targetId);
+/* Chave horizontal que faz a transição entre seções; a ponta aponta para o título. */
+function Edge({ at }: { at: number }) {
+  const w = 1440;
+  const b = 64;
+  const x = Math.round(w * at);
+  const line = `M0 ${b}H${x - 64}C${x - 20} ${b} ${x} ${b - 10} ${x} 4C${x} ${b - 10} ${x + 20} ${b} ${x + 64} ${b}H${w}`;
 
-  if (element) {
-    const headerHeight = 88;
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.scrollY - headerHeight;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
-  }
+  return (
+    <svg className={styles.edge} viewBox={`0 0 ${w} 72`} preserveAspectRatio="none" aria-hidden="true">
+      <path d={`${line}V72H0Z`} className={styles.edgeFill} />
+      <path d={line} className={styles.edgeLine} vectorEffect="non-scaling-stroke" />
+    </svg>
+  );
 }
 
-function handleAnchorClick(e: MouseEvent<HTMLAnchorElement>) {
-  const href = e.currentTarget.getAttribute("href");
+function ChatMockup({ lines }: { lines: string[] }) {
+  return (
+    <div className={styles.chat} aria-hidden="true">
+      {lines.map((line, index) => (
+        <span key={line} className={index % 2 ? styles.bubbleBot : styles.bubbleUser}>
+          {line}
+        </span>
+      ))}
+    </div>
+  );
+}
 
-  if (!href?.startsWith("#")) {
-    return;
-  }
-
-  e.preventDefault();
-  scrollToSection(href);
+function SiteMockup() {
+  return (
+    <div className={styles.site} aria-hidden="true">
+      <span className={styles.siteBar}>
+        <i />
+        <i />
+        <i />
+        <b>aquafitclub.com.br</b>
+      </span>
+      <span className={styles.siteHero}>
+        <strong>Aqua Fit Club</strong>
+        <small>Estrutura · Planos · Contato</small>
+        <em />
+      </span>
+      <span className={styles.siteGrid}>
+        <i />
+        <i />
+        <i />
+      </span>
+    </div>
+  );
 }
 
 function App() {
-  const [particlesReady, setParticlesReady] = useState(false);
-
   useEffect(() => {
     document.title = "ezf.tech | Tecnologia para organizar, automatizar e crescer";
 
-    const description =
-      "Soluções digitais para pequenas e médias empresas que querem organizar processos, automatizar tarefas, melhorar o atendimento e gerar mais oportunidades.";
-    const keywords =
-      "Soluções Digitais, Automação Empresarial, Atendimento Inteligente, Sistemas Web, Chatbots, Inteligência Artificial, Organização de Processos";
-
     const updateMeta = (name: string, content: string) => {
-      let metaTag = document.querySelector<HTMLMetaElement>(`meta[name=\"${name}\"]`);
+      let metaTag = document.querySelector<HTMLMetaElement>(`meta[name="${name}"]`);
 
       if (!metaTag) {
         metaTag = document.createElement("meta");
@@ -295,348 +228,231 @@ function App() {
       metaTag.setAttribute("content", content);
     };
 
-    updateMeta("description", description);
-    updateMeta("keywords", keywords);
-    updateMeta("theme-color", "#141427");
-
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setParticlesReady(true);
-    });
+    updateMeta(
+      "description",
+      "Soluções digitais para pequenas e médias empresas que querem organizar processos, automatizar tarefas, melhorar o atendimento e gerar mais oportunidades.",
+    );
+    updateMeta(
+      "keywords",
+      "Soluções Digitais, Automação Empresarial, Atendimento Inteligente, Sistemas Web, Chatbots, Inteligência Artificial, Organização de Processos",
+    );
+    updateMeta("theme-color", "#1b1026");
   }, []);
-
-  const particlesOptions = useMemo<ISourceOptions>(
-    () => ({
-      background: {
-        color: {
-          value: "transparent",
-        },
-      },
-      fullScreen: {
-        enable: false,
-      },
-      fpsLimit: 60,
-      interactivity: {
-        events: {
-          onHover: {
-            enable: true,
-            mode: "grab",
-          },
-        },
-        modes: {
-          grab: {
-            distance: 140,
-            links: {
-              opacity: 0.22,
-            },
-          },
-        },
-      },
-      particles: {
-        color: {
-          value: ["#9112bc", "#ae75da", "#ffffff"],
-        },
-        links: {
-          color: "#ae75da",
-          distance: 110,
-          enable: true,
-          opacity: 0.16,
-          width: 1,
-        },
-        move: {
-          enable: true,
-          speed: 0.55,
-          direction: "none",
-          outModes: {
-            default: "out",
-          },
-          random: true,
-          straight: false,
-        },
-        number: {
-          density: {
-            enable: true,
-            area: 900,
-          },
-          value: 64,
-        },
-        opacity: {
-          value: 0.34,
-        },
-        size: {
-          value: {
-            min: 1,
-            max: 3,
-          },
-        },
-      },
-      detectRetina: true,
-    }),
-    [],
-  );
 
   return (
     <div className={styles.page}>
-      <div className={styles.dots} aria-hidden="true" />
-      {particlesReady && (
-        <div className={styles.particlesLayer} aria-hidden="true">
-          <Particles
-            id="background-particles"
-            options={particlesOptions}
-            className={styles.particlesCanvas}
-          />
-        </div>
-      )}
       <header className={styles.header}>
         <div className={`container ${styles.headerInner}`}>
-          <a href="#home" className={styles.brand} onClick={handleAnchorClick}>
-            <img className={styles.brandLogo} src={logo} alt="ezf.tech" />
-            <span className={styles.brandCopy}>
-              <strong>ezf.tech</strong>
-              <span>Soluções digitais para empresas que querem organizar e crescer</span>
-            </span>
+          <a href="#home" className={styles.brand}>
+            <img src={logo} alt="ezf.tech" />
           </a>
 
           <nav className={styles.nav} aria-label="Seções da página">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href} onClick={handleAnchorClick}>
+              <a key={item.href} href={item.href}>
                 {item.label}
               </a>
             ))}
           </nav>
 
-          <div className={styles.headerActions}>
-            <a
-              className={styles.ghostButton}
-              href="#contact"
-              onClick={handleAnchorClick}
-            >
-              Solicitar diagnóstico
-            </a>
-            <a
-              className={styles.primaryButton}
-              href="https://wa.me/5511940354855"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Falar no WhatsApp
-            </a>
-          </div>
+          <a className={styles.headerCta} href="#contact">
+            Solicitar diagnóstico
+          </a>
         </div>
       </header>
 
-      <main className={styles.main}>
-        <section id="home" className={`${styles.section} ${styles.heroSection}`}>
+      <main>
+        <section id="home" className={`${styles.band} ${styles.ink} ${styles.hero}`}>
+          <Brace className={styles.heroBrace} />
+
           <div className={`container ${styles.heroGrid}`}>
             <div className={styles.heroCopy}>
-              <span className="eyebrow">Soluções digitais para pequenas e médias empresas</span>
-              <h1>Tecnologia que organiza seu negócio e acelera resultados.</h1>
-              <p>
-                Estruturamos soluções digitais que reduzem tarefas repetitivas, melhoram o
-                atendimento e ajudam sua empresa a crescer com mais organização.
+              <p className={styles.kicker}>Soluções digitais para pequenas e médias empresas</p>
+              <h1>
+                Tecnologia que <span className={styles.braced}>organiza</span> seu negócio e acelera
+                resultados.
+              </h1>
+              <p className={styles.heroLead}>
+                Estruturamos soluções digitais que reduzem tarefas repetitivas, melhoram o atendimento e
+                ajudam sua empresa a crescer com mais organização.
               </p>
 
-              <div className={styles.heroPromises} aria-label="Promessas de posicionamento">
-                {heroPromises.map((promise) => (
-                  <span key={promise.label}>
-                    <Icon name={promise.icon as IconName} />
-                    {promise.label}
-                  </span>
-                ))}
-              </div>
+              <p className={styles.promises}>{heroPromises.join("  ·  ")}</p>
 
-              <div className={styles.heroActions}>
-                <a
-                  href="#contact"
-                  className={styles.primaryButton}
-                  onClick={handleAnchorClick}
-                >
+              <div className={styles.actions}>
+                <a href="#contact" className={styles.button}>
                   Solicitar diagnóstico
                 </a>
-                <a
-                  href="#process"
-                  className={styles.secondaryButton}
-                  onClick={handleAnchorClick}
-                >
+                <a href="#process" className={styles.textLink}>
                   Conversar sobre meu projeto
                 </a>
               </div>
 
-              <div className={styles.heroTrust} aria-label="Sinais de confiança">
-                <span>✔ Soluções personalizadas</span>
-                <span>✔ Desenvolvimento sob medida</span>
-                <span>✔ Atendimento próximo durante todo o projeto</span>
-              </div>
-
-              <div className={styles.heroStats}>
-                <article className={styles.statCard}>
-                  <strong>Resultado</strong>
-                  <span>Mais organização para sua operação</span>
-                </article>
-                <article className={styles.statCard}>
-                  <strong>Processo</strong>
-                  <span>Menos trabalho manual e menos retrabalho</span>
-                </article>
-                <article className={styles.statCard}>
-                  <strong>Contato</strong>
-                  <span>Mais leads qualificados com mais previsibilidade</span>
-                </article>
-              </div>
+              <ul className={styles.trust}>
+                {heroTrust.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
 
-            <aside className={styles.heroVisual} aria-label="Resumo da proposta de valor">
-              <div className={styles.heroPanel}>
-                <span className={styles.panelTag}>Diagnóstico rápido</span>
-                <h2>Como sua empresa ganha tempo, organiza processos e atende melhor.</h2>
-
-                <div className={styles.signalList}>
-                  <div className={styles.signalItem}>
-                    <span />
-                    Cliente pede informações
-                  </div>
-                  <div className={styles.signalItem}>
-                    <span />
-                    IA responde imediatamente
-                  </div>
-                  <div className={styles.signalItem}>
-                    <span />
-                    Lead é qualificado
-                  </div>
-                </div>
-
-                <div className={styles.flowBox} aria-label="Como funciona">
-                  {storySteps.map((step, index) => (
-                    <div key={step.title} className={styles.flowStep}>
-                      <span className={styles.flowIcon}>
-                        <Icon name={step.icon as IconName} />
-                      </span>
-                      <span className={styles.flowCopy}>
-                        <strong>{step.title}</strong>
-                        <small>{step.description}</small>
-                      </span>
-                      {index < storySteps.length - 1 && (
-                        <span className={styles.flowArrow} aria-hidden="true" />
-                      )}
-                    </div>
-                  ))}
-                </div>
-
-                <a href="#contact" className={styles.panelCta} onClick={handleAnchorClick}>
-                  Solicitar diagnóstico
-                </a>
-              </div>
-
-              <div className={styles.heroAsideCard}>
-                <span className={styles.panelTag}>Foco em resultado</span>
-                <ul>
-                  <li>Mais clareza para o cliente entender sua oferta</li>
-                  <li>Mais velocidade no atendimento</li>
-                  <li>Mais organização entre canais e equipe</li>
-                  <li>Mais oportunidades com menos esforço manual</li>
-                </ul>
-              </div>
-            </aside>
-          </div>
-        </section>
-
-        <section id="problems" className={styles.section}>
-          <div className={`container ${styles.sectionShell}`}>
-            <div className={styles.sectionHeader}>
-              <span className="eyebrow">Problemas que resolvemos</span>
-              <h2 className="sectionTitle">Onde a maioria dos negócios perde dinheiro e tempo</h2>
-            </div>
-
-            <div className={styles.problemGrid}>
-              {problems.map((problem) => (
-                <article key={problem} className={styles.problemCard}>
-                  <span className={styles.problemDot} aria-hidden="true" />
-                  <p>{problem}</p>
-                </article>
+            <ol className={styles.flow} aria-label="Como funciona o atendimento organizado">
+              {storySteps.map((step) => (
+                <li key={step.title}>
+                  <strong>{step.title}</strong>
+                  <span>{step.description}</span>
+                </li>
               ))}
-            </div>
+            </ol>
+          </div>
+
+          <dl className={`container ${styles.stats}`}>
+            {heroStats.map((stat) => (
+              <div key={stat.label}>
+                <dt>{stat.label}</dt>
+                <dd>{stat.text}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
+        <section id="problems" className={`${styles.band} ${styles.paper} ${styles.problems}`}>
+          <Edge at={0.14} />
+          <div className={`container ${styles.problemsGrid}`}>
+            <p className={styles.kicker}>Problemas que resolvemos</p>
+            <h2 className={styles.problemsTitle}>Onde a maioria dos negócios perde dinheiro e tempo</h2>
+
+            <ul className={styles.problemList}>
+              {problems.map((problem) => (
+                <li key={problem}>{problem}</li>
+              ))}
+            </ul>
+
+            {/* O fio embaraçado atravessa a divisória e chega organizado na próxima seção. */}
+            <svg className={styles.tangle} viewBox="0 0 240 620" aria-hidden="true">
+              <path
+                d="M30 60C110-10 210 40 170 110S20 170 60 90s170-20 150 70-160 60-120-10 150 10 110 90-110 70-60 10 100 40 50 110c-30 40-30 80-30 130V620"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+              />
+            </svg>
           </div>
         </section>
 
-        <section id="solutions" className={styles.section}>
-          <div className={`container ${styles.sectionShell}`}>
-            <div className={styles.sectionHeader}>
-              <span className="eyebrow">Como ajudamos</span>
-              <h2 className="sectionTitle">Tecnologia aplicada aos pontos que mais travam o crescimento</h2>
-              <p className={styles.sectionLead}>
+        <section id="solutions" className={`${styles.band} ${styles.ink} ${styles.solutions}`}>
+          <Edge at={0.1} />
+          <div className={`container ${styles.solutionsGrid}`}>
+            <div className={styles.solutionsHead}>
+              <p className={styles.kicker}>Como ajudamos</p>
+              <h2 className={styles.title}>Tecnologia aplicada aos pontos que mais travam o crescimento</h2>
+              <p className={styles.muted}>
                 Sites, sistemas, chatbots e IA entram como ferramentas. O foco é melhorar atendimento,
                 organizar processos e criar uma operação mais preparada para vender e crescer.
               </p>
             </div>
 
-            <div className={styles.serviceGrid}>
+            <figure className={styles.solutionsFigure}>
+              <ol className={styles.signals}>
+                {signals.map((signal) => (
+                  <li key={signal}>{signal}</li>
+                ))}
+              </ol>
+            </figure>
+
+            <ul className={styles.solutionList}>
               {solutions.map((solution) => (
-                <article key={solution.title} className={styles.serviceCard}>
+                <li key={solution.title}>
                   <h3>{solution.title}</h3>
                   <p>{solution.description}</p>
-                </article>
+                </li>
               ))}
+            </ul>
+          </div>
+        </section>
+
+        <section id="benefits" className={`${styles.band} ${styles.violet} ${styles.benefits}`}>
+          <Edge at={0.43} />
+          <div className="container">
+            <p className={styles.kicker}>Benefícios</p>
+            <h2 className={styles.benefitsTitle}>
+              O que sua empresa ganha quando a tecnologia resolve problemas reais
+            </h2>
+
+            <div className={styles.benefitsGroup}>
+              <span className={styles.more} aria-hidden="true">
+                Mais
+              </span>
+              <Brace className={styles.benefitsBrace} />
+              <ul className={styles.benefitList}>
+                {benefits.map((benefit) => (
+                  <li key={benefit.title}>
+                    <h3>
+                      <span className={styles.srOnly}>Mais </span>
+                      {benefit.title}
+                    </h3>
+                    <p>{benefit.description}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
 
-        <section id="benefits" className={styles.section}>
-          <div className={`container ${styles.sectionShell}`}>
-            <div className={styles.sectionHeader}>
-              <span className="eyebrow">Benefícios</span>
-              <h2 className="sectionTitle">O que sua empresa ganha quando a tecnologia resolve problemas reais</h2>
+        <section id="process" className={`${styles.band} ${styles.paper} ${styles.process}`}>
+          <Edge at={0.43} />
+          <div className="container">
+            <div className={styles.processHead}>
+              <p className={styles.kicker}>Como funciona</p>
+              <h2 className={styles.title}>Um processo simples, claro e orientado a resultado</h2>
             </div>
 
-            <div className={styles.benefitGrid}>
-              {benefits.map((benefit) => (
-                <article key={benefit.title} className={styles.benefitCard}>
-                  <span aria-hidden="true">✔</span>
-                  <h3>{benefit.title}</h3>
-                  <p>{benefit.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="process" className={styles.section}>
-          <div className={`container ${styles.sectionShell}`}>
-            <div className={styles.sectionHeader}>
-              <span className="eyebrow">Como funciona</span>
-              <h2 className="sectionTitle">Um processo simples, claro e orientado a resultado</h2>
-            </div>
-
-            <div className={styles.processList}>
+            <ol className={styles.timeline}>
               {processSteps.map((step, index) => (
-                <article key={step} className={styles.processStep}>
-                  <span className={styles.stepNumber}>0{index + 1}</span>
+                <li key={step}>
+                  <span>0{index + 1}</span>
                   <p>{step}</p>
-                </article>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
         </section>
 
-        <section id="portfolio" className={styles.section}>
-          <div className={`container ${styles.sectionShell}`}>
-            <div className={styles.sectionHeader}>
-              <span className="eyebrow">Portfólio</span>
-              <h2 className="sectionTitle">Projetos que mostram tecnologia resolvendo operação</h2>
-              <p className={styles.sectionLead}>
-                Cada entrega é apresentada pelo problema que precisava ser resolvido, pela solução
-                criada e pelo ganho prático para a rotina do negócio.
+        <section id="portfolio" className={`${styles.band} ${styles.ink} ${styles.portfolio}`}>
+          <Edge at={0.1} />
+          <div className="container">
+            <div className={styles.portfolioHead}>
+              <p className={styles.kicker}>Portfólio</p>
+              <h2 className={styles.title}>Projetos que mostram tecnologia resolvendo operação</h2>
+              <p className={styles.muted}>
+                Cada entrega é apresentada pelo problema que precisava ser resolvido, pela solução criada e
+                pelo ganho prático para a rotina do negócio.
               </p>
             </div>
 
-            <div className={styles.portfolioGrid}>
-              {portfolioItems.map((project) => (
-                <article key={`${project.title}-${project.type}`} className={styles.portfolioCard}>
-                  <div className={styles.portfolioMeta}>
-                    <span className={styles.panelTag}>{project.tags[0]}</span>
-                    <span className={styles.portfolioType}>{project.type}</span>
-                  </div>
+            {portfolioItems.map((project) => (
+              <article key={`${project.title}-${project.type}`} className={styles.case}>
+                <figure className={project.mockup === "chat" ? styles.caseCircle : styles.caseArch}>
+                  {project.mockup === "chat" ? (
+                    <ChatMockup
+                      lines={[
+                        "Oi! Quero saber sobre os planos.",
+                        "Claro! Qual modalidade te interessa?",
+                        "Natação, à noite.",
+                        "Anotado. Vou te passar para a equipe certa.",
+                      ]}
+                    />
+                  ) : (
+                    <SiteMockup />
+                  )}
+                </figure>
+
+                <div className={styles.caseBody}>
+                  <p className={styles.caseType}>
+                    {project.type} <span>/ {project.tags[0]}</span>
+                  </p>
                   <h3>{project.title}</h3>
-                  <dl className={styles.caseList}>
+                  <dl>
                     <div>
                       <dt>Problema</dt>
                       <dd>{project.problem}</dd>
@@ -650,100 +466,91 @@ function App() {
                       <dd>{project.result}</dd>
                     </div>
                   </dl>
-                  <div className={styles.portfolioTags}>
-                    {project.tags.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
-                  </div>
+                  <p className={styles.tags}>{project.tags.join(" / ")}</p>
                   {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.portfolioLink}
-                    >
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className={styles.textLink}>
                       Visitar site ↗
                     </a>
                   )}
-                </article>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="about" className={`${styles.band} ${styles.paper} ${styles.about}`}>
+          <Edge at={0.1} />
+          <div className={`container ${styles.aboutGrid}`}>
+            <div className={styles.aboutHead}>
+              <p className={styles.kicker}>Sobre a ezf.tech</p>
+              <h2 className={styles.title}>Tecnologia com foco em resolver problemas de negócio</h2>
+            </div>
+            <p className={styles.aboutLead}>
+              A ezf.tech ajuda pequenas e médias empresas a trabalharem melhor, atenderem melhor e crescerem
+              de forma mais organizada usando soluções digitais inteligentes.
+            </p>
+
+            <blockquote className={styles.quote}>
+              <Brace className={styles.quoteBrace} />A ezf.tech não vende sites, sistemas ou IA. Usa essas
+              ferramentas para ajudar empresas a trabalhar melhor, atender melhor e crescer com mais
+              organização.
+            </blockquote>
+
+            <p className={styles.aboutText}>
+              O trabalho parte dos desafios reais da operação: tarefas repetitivas, atendimento lento,
+              informações espalhadas e processos que dependem demais de esforço manual.
+            </p>
+
+            <ul className={styles.values}>
+              {differentiators.map((item) => (
+                <li key={item}>{item}</li>
               ))}
-            </div>
+            </ul>
           </div>
         </section>
 
-        <section id="about" className={styles.section}>
-          <div className={`container ${styles.sectionShell} ${styles.aboutGrid}`}>
-            <div className={styles.sectionHeader}>
-              <span className="eyebrow">Sobre a ezf.tech</span>
-              <h2 className="sectionTitle">Tecnologia com foco em resolver problemas de negócio</h2>
-              <p className={styles.sectionLead}>
-                A ezf.tech ajuda pequenas e médias empresas a trabalharem melhor, atenderem melhor
-                e crescerem de forma mais organizada usando soluções digitais inteligentes.
-              </p>
-            </div>
+        <section id="contact" className={`${styles.band} ${styles.ink} ${styles.contact}`}>
+          <Edge at={0.1} />
+          <Brace className={styles.closeBrace} />
+          <div className={`container ${styles.contactGrid}`}>
+            <p className={styles.kicker}>Diagnóstico</p>
+            <h2 className={styles.contactTitle}>
+              Vamos descobrir como a tecnologia pode <span className={styles.braced}>simplificar</span> seu
+              negócio?
+            </h2>
+            <p className={`${styles.muted} ${styles.contactLead}`}>
+              Se você quer organizar atendimento, melhorar a presença digital e criar um fluxo comercial mais
+              consistente, o próximo passo é um diagnóstico rápido.
+            </p>
 
-            <div className={styles.aboutCard}>
-              <blockquote>
-                A ezf.tech não vende sites, sistemas ou IA. Usa essas ferramentas para ajudar
-                empresas a trabalhar melhor, atender melhor e crescer com mais organização.
-              </blockquote>
-
-              <p>
-                O trabalho parte dos desafios reais da operação: tarefas repetitivas, atendimento
-                lento, informações espalhadas e processos que dependem demais de esforço manual.
-              </p>
-
-              <div className={styles.differentiators}>
-                {differentiators.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="contact" className={styles.section}>
-          <div className={`container ${styles.contactPanel}`}>
-            <div className={styles.contactCopy}>
-              <span className="eyebrow">Diagnóstico</span>
-              <h2 className="sectionTitle">Vamos descobrir como a tecnologia pode simplificar seu negócio?</h2>
-              <p>
-                Se você quer organizar atendimento, melhorar a presença digital e criar um fluxo
-                comercial mais consistente, o próximo passo é um diagnóstico rápido.
-              </p>
-            </div>
-
-            <div className={styles.contactActions}>
-              <a
-                href="https://wa.me/5511940354855"
-                target="_blank"
-                rel="noreferrer"
-                className={styles.primaryButton}
-              >
+            <div className={styles.actions}>
+              <a href={WHATSAPP} target="_blank" rel="noreferrer" className={styles.button}>
                 Falar no WhatsApp
               </a>
-              <a href="mailto:fernandesdenzo223@gmail.com" className={styles.secondaryButton}>
+              <a href={`mailto:${EMAIL}`} className={styles.buttonLine}>
                 Enviar email
               </a>
-              <a href="#home" className={styles.ghostButton} onClick={handleAnchorClick}>
+              <a href="#home" className={styles.textLink}>
                 Voltar ao topo
               </a>
             </div>
 
-            <div className={styles.contactMethods}>
-              {contactMethods.map((method) => (
-                <a
-                  key={method.label}
-                  href={method.href}
-                  target={method.label === "WhatsApp" ? "_blank" : undefined}
-                  rel={method.label === "WhatsApp" ? "noreferrer" : undefined}
-                  className={styles.contactMethod}
-                >
-                  <strong>{method.label}</strong>
-                  <span>{method.value}</span>
-                </a>
-              ))}
-            </div>
+            <dl className={styles.channels}>
+              <div>
+                <dt>WhatsApp</dt>
+                <dd>
+                  <a href={WHATSAPP} target="_blank" rel="noreferrer">
+                    +55 11 99108-4238
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd>
+                  <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                </dd>
+              </div>
+            </dl>
           </div>
         </section>
       </main>
@@ -755,19 +562,9 @@ function App() {
         </div>
       </footer>
 
-      <div className={styles.floatingActions} aria-label="Ações rápidas">
-        <a href="#contact" className={styles.floatingDiagnosis} onClick={handleAnchorClick}>
-          Solicitar diagnóstico
-        </a>
-        <a
-          href="https://wa.me/5511940354855"
-          className={styles.floatingWhatsApp}
-          target="_blank"
-          rel="noreferrer"
-        >
-          WhatsApp
-        </a>
-      </div>
+      <a href={WHATSAPP} className={styles.floating} target="_blank" rel="noreferrer">
+        WhatsApp
+      </a>
     </div>
   );
 }
