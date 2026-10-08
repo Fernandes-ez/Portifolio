@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Pacote de handoff do redesign (referência local)
+ezf-tech-handoff/
+ezf-tech-handoff.zip

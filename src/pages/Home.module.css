@@ -1,0 +1,209 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 88px;
+}
+
+.hero h1 {
+  max-width: 1040px;
+  font-size: clamp(36px, 4.6vw, 64px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.037em;
+}
+
+.hero > p {
+  max-width: 680px;
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Print do painel com a conversa sobreposta no canto inferior direito */
+.showcase {
+  position: relative;
+  padding-top: 64px;
+}
+
+.dashboard {
+  overflow: hidden;
+  background: #1E1B24;
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+}
+
+.chat {
+  position: absolute;
+  right: calc(var(--gutter) + 24px);
+  bottom: -110px;
+  width: min(500px, 38%);
+  overflow: hidden;
+  border: 1px solid #5A4676;
+  border-radius: 12px;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+}
+
+.caption {
+  margin-top: 18px;
+  max-width: 640px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 150px;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.bubbles {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #F1ECF7;
+}
+
+.bubbles span {
+  align-self: flex-start;
+  padding: 9px 12px;
+  background: #34254A;
+  border-radius: 4px;
+}
+
+.bubbles span:nth-child(even) {
+  align-self: flex-end;
+  background: #4A2A6E;
+}
+
+.crop {
+  width: 760px;
+  max-width: none;
+  margin: -50px 0 0 -170px;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+  padding-top: 88px;
+}
+
+.photo {
+  height: 380px;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+}
+
+.about h2 {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.about p {
+  max-width: 680px;
+  margin-top: 18px;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
+@media (max-width: 1080px) {
+  .serviceGrid {
+    grid-template-columns: 1fr;
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    gap: 18px;
+    padding-top: 40px;
+  }
+
+  .hero > p {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .actions > a {
+    flex: 1 1 100%;
+  }
+
+  /* No celular, só o print da conversa */
+  .showcase {
+    padding-top: 32px;
+  }
+
+  .dashboard {
+    display: none;
+  }
+
+  .chat {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .caption {
+    margin-top: 10px;
+    font-size: 11px;
+  }
+
+  .services {
+    padding-top: 48px;
+    gap: 16px;
+  }
+
+  .serviceGrid,
+  .products {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-top: 48px;
+  }
+
+  .photo {
+    height: 300px;
+  }
+
+  .about h2 {
+    font-size: 26px;
+    letter-spacing: -0.6px;
+  }
+
+  .about p {
+    margin-top: 12px;
+    font-size: 16px;
+  }
+}

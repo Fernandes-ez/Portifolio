@@ -1,0 +1,28 @@
+:root {
+  --bg: #1B1026;
+  --surface: #261835;
+  --surface-sunken: #20142E;
+  --line: #3A2A4E;
+  --line-strong: #4A3862;
+  --text: #FFFFFF;
+  --text-muted: #B9ABCB;
+  --text-soft: #D8CCE6;
+  --violet: #8A12B4;
+  --lilac: #B98BE0;
+  --amber: #F2B233;
+  --paper: #EEEAF3;
+  --paper-text: #1B1026;
+  --paper-muted: #5C5070;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+
+  --font: "Geist", "Helvetica Neue", Arial, sans-serif;
+  --mono: "Geist Mono", ui-monospace, monospace;
+  --gutter: 64px;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: 20px;
+  }
+}

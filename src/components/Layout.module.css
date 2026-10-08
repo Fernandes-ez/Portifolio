@@ -1,0 +1,155 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.bar {
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  width: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 15px;
+}
+
+.nav a {
+  white-space: nowrap;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--lilac);
+}
+
+.nav a[aria-current='page'] {
+  color: var(--lilac);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.nav .cta {
+  background: var(--amber);
+  color: var(--bg);
+  font-weight: 600;
+  padding: 11px 18px;
+  border-radius: var(--radius-btn);
+}
+
+.nav .cta:hover {
+  color: var(--bg);
+  background: #F5C35A;
+}
+
+.menuButton {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 88px;
+  border-top: 1px solid var(--line);
+}
+
+.footerInner {
+  padding-top: 28px;
+  padding-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.footerInner a {
+  color: var(--text-muted);
+}
+
+@media (max-width: 960px) {
+  .bar {
+    height: 64px;
+  }
+
+  .bar img {
+    height: 24px !important;
+  }
+
+  .menuButton {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px var(--gutter) 20px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    font-size: 17px;
+  }
+
+  .nav[data-open='true'] {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav .cta {
+    margin-top: 16px;
+    border-bottom: 0;
+    text-align: center;
+    padding: 15px 18px;
+  }
+}
+
+@media (max-width: 720px) {
+  .footer {
+    margin-top: 48px;
+  }
+
+  .footerInner {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 12px;
+  }
+
+  .footerInner p {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footerInner p span[aria-hidden] {
+    display: none;
+  }
+}

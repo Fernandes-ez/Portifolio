@@ -1,0 +1,266 @@
+/* Layout compartilhado pelas páginas de serviço (/sites, /automacao, /sistemas) */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 620px);
+  gap: 64px;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.heroCopy h1 {
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.heroCopy > p {
+  max-width: 560px;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.shot {
+  overflow: hidden;
+  background: #1E1B24;
+  border: 1px solid #5A4676;
+  border-radius: 14px;
+}
+
+.heroPlaceholder {
+  height: 400px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 96px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.intro h2 {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -1.2px;
+}
+
+.intro p {
+  font-size: 17px;
+  color: var(--text-muted);
+}
+
+/* Faixa de garantias */
+.guarantees {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 72px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.guarantees div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 22px 24px;
+}
+
+.guarantees div:first-child {
+  padding-left: 0;
+}
+
+.guarantees div + div {
+  border-left: 1px solid var(--line);
+}
+
+.guarantees strong {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.guarantees span {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.includes {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 22px 28px;
+  font-size: 15px;
+  color: var(--text-soft);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+}
+
+.includes strong {
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.note {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Caso real */
+.case {
+  display: grid;
+  grid-template-columns: 420px minmax(0, 1fr);
+  gap: 56px;
+  padding-top: 96px;
+}
+
+.case h2 {
+  margin-top: 14px;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+}
+
+.caseSteps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text-soft);
+}
+
+.caseSteps div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 1080px) {
+  .hero,
+  .case {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .grid4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .guarantees {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .guarantees div:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .guarantees div:nth-child(n + 3) {
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding-top: 40px;
+    gap: 32px;
+  }
+
+  .heroCopy {
+    gap: 18px;
+  }
+
+  .heroCopy > p {
+    font-size: 17px;
+  }
+
+  .actions > a {
+    flex: 1 1 100%;
+  }
+
+  .heroPlaceholder {
+    height: 260px;
+  }
+
+  .section,
+  .case {
+    padding-top: 56px;
+    gap: 20px;
+  }
+
+  .intro h2 {
+    font-size: 26px;
+    letter-spacing: -0.6px;
+  }
+
+  .guarantees {
+    grid-template-columns: 1fr;
+    margin-top: 48px;
+  }
+
+  .guarantees div,
+  .guarantees div + div {
+    padding: 16px 0;
+    border-left: 0;
+  }
+
+  .guarantees div + div {
+    border-top: 1px solid var(--line);
+  }
+
+  .includes {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 18px 20px;
+  }
+
+  .grid4,
+  .grid2,
+  .caseSteps {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .case h2 {
+    font-size: 26px;
+  }
+}
