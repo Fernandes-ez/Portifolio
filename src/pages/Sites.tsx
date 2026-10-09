@@ -1,7 +1,8 @@
 import Layout from '../components/Layout'
-import { Button, FinalCta, Label, PackageGrid, PaperSection, Placeholder } from '../components/ui'
-import { pacotesSites } from '../data/precos'
+import { Button, FinalCta, Label, PackageGrid, PaperSection } from '../components/ui'
+import { implantacaoCatalogo, pacotesSites } from '../data/precos'
 import { mensagens, wa } from '../data/whatsapp'
+import { links } from '../data/links'
 import styles from './Service.module.css'
 
 const garantias = [
@@ -45,7 +46,25 @@ export default function Sites() {
             </Button>
           </div>
         </div>
-        <Placeholder className={styles.heroPlaceholder}>[print do site da Aqua Fit no computador e no celular]</Placeholder>
+        <figure className={styles.duo}>
+          <div className={styles.shot}>
+            <img
+              src="/img/aquafit-desktop.jpg"
+              alt="Site da Aqua Fit Club no computador"
+              width={1440}
+              height={900}
+            />
+          </div>
+          <div className={styles.phone}>
+            <img src="/img/aquafit-celular.jpg" alt="Site da Aqua Fit Club no celular" width={390} height={660} />
+          </div>
+          <figcaption>
+            <a href={links.aquafit} target="_blank" rel="noreferrer">
+              aquafitclub.com.br
+            </a>
+            , site que eu fiz para a Aqua Fit Club.
+          </figcaption>
+        </figure>
       </section>
 
       <div className="container">
@@ -63,11 +82,12 @@ export default function Sites() {
         <div className={styles.intro}>
           <h2>Escolha o seu pacote</h2>
           <p>
-            Pagamento em 50% no início e 50% na entrega, em até 3x, ou em 12x sem entrada já com a manutenção do primeiro
-            ano.
+            Valores de partida. O preço final sai fechado na conversa, antes de começar. Pagamento em 50% no início e 50%
+            na entrega, em até 3x, ou em 12x sem entrada já com a manutenção do primeiro ano.
           </p>
         </div>
         <PackageGrid pacotes={pacotesSites} />
+        <p className={styles.addon}>{implantacaoCatalogo}</p>
         <div className={styles.includes}>
           <strong>A mensalidade inclui</strong>
           <span>hospedagem · certificado de segurança · backups · pequenos ajustes (até 1 hora por mês) · suporte pelo WhatsApp</span>

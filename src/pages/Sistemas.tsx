@@ -2,6 +2,7 @@ import Layout from '../components/Layout'
 import { Button, FinalCta, Label, MiniCard, PackageGrid } from '../components/ui'
 import { pacotesSistemas } from '../data/precos'
 import { mensagens, wa } from '../data/whatsapp'
+import { links } from '../data/links'
 import styles from './Service.module.css'
 
 // Página sem referência visual: segue o modelo de /automacao.
@@ -51,8 +52,8 @@ export default function Sistemas() {
           <Label>sistemas que eu já construí</Label>
         </div>
         <div className={styles.grid2}>
-          <MiniCard inline title="Puka" text="CRM com atendimento por IA no WhatsApp · produto próprio" />
-          <MiniCard inline title="Tábua" text="cardápio digital para restaurantes · em construção" />
+          <MiniCard inline title="Puka" text="CRM com atendimento por IA no WhatsApp · produto próprio" href={links.puka} />
+          <MiniCard inline title="Tábua" text="cardápio digital para restaurantes · em construção" href={links.tabua} />
         </div>
       </section>
 

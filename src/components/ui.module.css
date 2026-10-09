@@ -159,6 +159,25 @@
   color: var(--text-muted);
 }
 
+.miniLink {
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+
+.miniLink:hover {
+  color: var(--text);
+  border-color: var(--lilac);
+}
+
+.miniLink .domain {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--lilac);
+  white-space: nowrap;
+}
+
 .miniInline {
   flex-direction: row;
   align-items: baseline;
@@ -227,6 +246,16 @@
   font-weight: 600;
   letter-spacing: -1.2px;
   line-height: 1.1;
+}
+
+.from {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--text-muted);
 }
 
 .packageTerms {
@@ -385,6 +414,11 @@
 
   .cardBody p {
     font-size: 15px;
+  }
+
+  .miniLink .domain {
+    margin-left: 0;
+    margin-top: 4px;
   }
 
   .miniInline {

@@ -1,13 +1,13 @@
-import { useState, type ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { EMAIL, WHATSAPP_DISPLAY, wa } from '../data/whatsapp'
 import styles from './Layout.module.css'
 
 type Page = 'home' | 'sites' | 'automacao' | 'sistemas' | '404'
 
 const links = [
-  { href: '/sites', label: 'Sites', page: 'sites' },
-  { href: '/automacao', label: 'Automação', page: 'automacao' },
-  { href: '/sistemas', label: 'Sistemas', page: 'sistemas' },
+  { href: '/sites/', label: 'Sites', page: 'sites' },
+  { href: '/automacao/', label: 'Automação', page: 'automacao' },
+  { href: '/sistemas/', label: 'Sistemas', page: 'sistemas' },
   { href: '/#como-funciona', label: 'Como funciona' },
   { href: '/#sobre', label: 'Sobre' },
 ]
@@ -27,6 +27,15 @@ function Logo({ height }: { height: number }) {
 
 export default function Layout({ page, children }: { page: Page; children: ReactNode }) {
   const [open, setOpen] = useState(false)
+
+  // O conteúdo é montado pelo React depois do carregamento, então o navegador não acha a âncora (#como-funciona)
+  // sozinho. Repete no load porque fontes e imagens ainda mudam a altura da página.
+  useEffect(() => {
+    if (!location.hash) return
+    const go = () => document.querySelector(location.hash)?.scrollIntoView({ behavior: 'instant' })
+    go()
+    if (document.readyState !== 'complete') window.addEventListener('load', go, { once: true })
+  }, [])
 
   return (
     <>

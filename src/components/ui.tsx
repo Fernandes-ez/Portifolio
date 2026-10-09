@@ -68,12 +68,32 @@ export function ServiceCard({
 }
 
 // Cartão curto (Puka, Tábua, itens de "o que dá para fazer")
-export function MiniCard({ title, text, inline = false }: { title: string; text: string; inline?: boolean }) {
+export function MiniCard({
+  title,
+  text,
+  inline = false,
+  href,
+}: {
+  title: string
+  text: string
+  inline?: boolean
+  href?: string
+}) {
+  const className = `${styles.mini} ${inline ? styles.miniInline : ''}`
+  if (!href) {
+    return (
+      <div className={className}>
+        <strong>{title}</strong>
+        <span>{text}</span>
+      </div>
+    )
+  }
   return (
-    <div className={`${styles.mini} ${inline ? styles.miniInline : ''}`}>
+    <a className={`${className} ${styles.miniLink}`} href={href} target="_blank" rel="noreferrer">
       <strong>{title}</strong>
       <span>{text}</span>
-    </div>
+      <span className={styles.domain}>{new URL(href).hostname.replace(/^www\./, '')} ↗</span>
+    </a>
   )
 }
 
@@ -83,7 +103,10 @@ export function PackageCard({ pacote }: { pacote: Pacote }) {
       {pacote.recomendado && <span className={styles.badge}>recomendado</span>}
       <h3>{pacote.nome}</h3>
       <p className={styles.packageDesc}>{pacote.descricao}</p>
-      <p className={styles.packagePrice}>{pacote.preco}</p>
+      <p className={styles.packagePrice}>
+        {pacote.aPartirDe && <span className={styles.from}>a partir de</span>}
+        {pacote.preco}
+      </p>
       <p className={styles.packageTerms}>{pacote.condicoes}</p>
       <ul>
         {pacote.itens.map((item) => (

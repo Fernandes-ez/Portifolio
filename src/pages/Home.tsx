@@ -1,7 +1,8 @@
 import Layout from '../components/Layout'
-import { Button, FinalCta, Label, MiniCard, PaperSection, Placeholder, SectionHead, ServiceCard } from '../components/ui'
+import { Button, FinalCta, Label, MiniCard, PaperSection, SectionHead, ServiceCard } from '../components/ui'
 import { aPartirDe } from '../data/precos'
 import { mensagens, wa } from '../data/whatsapp'
+import { links } from '../data/links'
 import styles from './Home.module.css'
 
 const passos = [
@@ -50,14 +51,28 @@ export default function Home() {
             height={788}
           />
         </div>
-        <p className={styles.caption}>Puka: CRM com atendimento por IA no WhatsApp. Produto próprio, desenvolvido por mim.</p>
+        <p className={styles.caption}>
+          <a href={links.puka} target="_blank" rel="noreferrer">
+            Puka
+          </a>
+          : CRM com atendimento por IA no WhatsApp. Produto próprio, desenvolvido por mim.
+        </p>
       </section>
 
       <section className={`container ${styles.services}`}>
         <SectionHead title="O que eu faço" aside="contrate um ou os três juntos" />
         <div className={styles.serviceGrid}>
           <ServiceCard
-            media={<Placeholder>[print do site da Aqua Fit, quando a nova versão estiver no ar]</Placeholder>}
+            media={
+              <img
+                className={styles.cover}
+                src="/img/aquafit-desktop.jpg"
+                alt="Site da Aqua Fit Club, feito pela ezf.tech"
+                width={1440}
+                height={900}
+                loading="lazy"
+              />
+            }
             label="Site"
             title="Sua empresa encontrada fora do Instagram"
             text="Site com a cara da sua marca, rápido no celular, com WhatsApp em cada produto ou serviço. Domínio sempre no seu nome."
@@ -94,22 +109,63 @@ export default function Home() {
           />
         </div>
         <div className={styles.products}>
-          <MiniCard inline title="Puka" text="CRM com atendimento por IA no WhatsApp · produto próprio" />
-          <MiniCard inline title="Tábua" text="cardápio digital para restaurantes · em construção" />
+          <MiniCard inline title="Puka" text="CRM com atendimento por IA no WhatsApp · produto próprio" href={links.puka} />
+          <MiniCard inline title="Tábua" text="cardápio digital para restaurantes · em construção" href={links.tabua} />
         </div>
       </section>
 
       <PaperSection id="como-funciona" title="Como funciona" items={passos} columns={4} />
 
       <section id="sobre" className={`container ${styles.about}`}>
-        <Placeholder className={styles.photo}>[sua foto]</Placeholder>
+        <img
+          className={styles.photo}
+          src="/img/enzo.jpg"
+          alt="Enzo Fernandes, desenvolvedor da ezf.tech"
+          width={460}
+          height={460}
+          loading="lazy"
+        />
         <div>
           <h2>Quem faz</h2>
           <p>
-            Eu sou o Enzo, desenvolvedor em São Paulo. Trabalho com Node.js, Python, Java, C# e React/Next.js. Construí
-            a Puka, um CRM com IA para WhatsApp, e estou construindo a Tábua, de cardápio digital.
+            Eu sou o Enzo, desenvolvedor aqui em São Paulo. Estudei Desenvolvimento de Software Multiplataforma na Fatec
+            Zona Leste e trabalhei como desenvolvedor antes de abrir a ezf.tech.
+          </p>
+          <p>
+            A ezf.tech existe para fazer soluções sob medida. Em vez de encaixar a sua empresa num sistema pronto, eu
+            entendo como ela funciona e faço o site, a automação ou o sistema para ela. Foi assim que construí a{' '}
+            <a href={links.puka} target="_blank" rel="noreferrer">
+              Puka
+            </a>
+            , um CRM com IA para WhatsApp, e estou construindo a{' '}
+            <a href={links.tabua} target="_blank" rel="noreferrer">
+              Tábua
+            </a>
+            , de cardápio digital.
           </p>
           <p>Na ezf.tech, quem conversa com você é quem escreve o código.</p>
+          <dl className={styles.facts}>
+            <div>
+              <dt>formação</dt>
+              <dd>Desenvolvimento de Software Multiplataforma · Fatec Zona Leste</dd>
+            </div>
+            <div>
+              <dt>onde</dt>
+              <dd>São Paulo, capital</dd>
+            </div>
+            <div>
+              <dt>trabalho com</dt>
+              <dd>Node.js, Python, Java, C#, React e Next.js</dd>
+            </div>
+            <div>
+              <dt>código</dt>
+              <dd>
+                <a href={links.github} target="_blank" rel="noreferrer">
+                  github.com/Fernandes-ez ↗
+                </a>
+              </dd>
+            </div>
+          </dl>
         </div>
       </section>
 

@@ -42,8 +42,34 @@
   border-radius: 14px;
 }
 
-.heroPlaceholder {
-  height: 400px;
+/* Print do computador com o do celular sobreposto no canto inferior direito */
+.duo {
+  position: relative;
+  padding: 0 28px 40px 0;
+}
+
+.phone {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 26%;
+  overflow: hidden;
+  background: #1E1B24;
+  border: 1px solid #5A4676;
+  border-radius: 18px;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+}
+
+.duo figcaption {
+  margin-top: 18px;
+  max-width: 70%;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.duo figcaption a {
+  color: var(--lilac);
 }
 
 .section {
@@ -102,6 +128,11 @@
 .guarantees span {
   font-size: 14px;
   color: var(--text-muted);
+}
+
+.addon {
+  font-size: 16px;
+  color: var(--text-soft);
 }
 
 .includes {
@@ -216,8 +247,17 @@
     flex: 1 1 100%;
   }
 
-  .heroPlaceholder {
-    height: 260px;
+  .duo {
+    padding: 0 16px 28px 0;
+  }
+
+  .phone {
+    width: 30%;
+    border-radius: 12px;
+  }
+
+  .duo figcaption {
+    font-size: 11px;
   }
 
   .section,
