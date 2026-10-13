@@ -17,7 +17,7 @@ export type Pacote = {
 export const aPartirDe = {
   site: 'a partir de R$ 790',
   automacao: 'a partir de R$ 690',
-  sistema: 'a partir de R$ 790',
+  sistema: 'a partir de R$ 99/mês',
 }
 
 export const pacotesSites: Pacote[] = [
@@ -120,9 +120,9 @@ export const pacotesSistemas: Pacote[] = [
   {
     nome: 'Agendamento online',
     descricao: 'Seus clientes marcam horário sozinhos, e você acompanha tudo num painel.',
-    preco: 'R$ 790',
-    aPartirDe: true,
-    condicoes: '+ R$ 79/mês',
+    preco: 'R$ 99/mês',
+    aPartirDe: false,
+    condicoes: 'sem implantação',
     itens: [
       'Página de agendamento com a cara da sua marca',
       'Painel com a agenda do dia e os cadastros dos clientes',
