@@ -1,0 +1,149 @@
+.page {
+  padding-top: 80px;
+  padding-bottom: 96px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 820px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--lilac);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.header h1 {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.header p {
+  max-width: 680px;
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.updated {
+  font-family: var(--mono);
+  font-size: 12px !important;
+  color: var(--text-soft) !important;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 720px);
+  gap: 72px;
+  padding-top: 56px;
+}
+
+.toc {
+  align-self: start;
+  position: sticky;
+  top: 112px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.toc a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.toc a:hover {
+  color: var(--lilac);
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  scroll-margin-top: 110px;
+}
+
+.section h2 {
+  font-size: 27px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.section h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.section p,
+.section li {
+  color: var(--text-soft);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.section a {
+  color: var(--lilac);
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding-top: 40px;
+    padding-bottom: 56px;
+  }
+
+  .header {
+    padding-bottom: 36px;
+  }
+
+  .header p {
+    font-size: 16px;
+  }
+
+  .content {
+    display: block;
+    padding-top: 36px;
+  }
+
+  .toc {
+    position: static;
+    margin-bottom: 48px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .article {
+    gap: 36px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+}

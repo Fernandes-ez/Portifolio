@@ -12,6 +12,8 @@ export default defineConfig({
         sites: resolve(__dirname, 'sites/index.html'),
         automacao: resolve(__dirname, 'automacao/index.html'),
         sistemas: resolve(__dirname, 'sistemas/index.html'),
+        termos: resolve(__dirname, 'termos/index.html'),
+        privacidade: resolve(__dirname, 'privacidade/index.html'),
         notFound: resolve(__dirname, '404.html'),
       },
     },

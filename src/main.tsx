@@ -9,6 +9,8 @@ const pages = {
   sites: () => import('./pages/Sites'),
   automacao: () => import('./pages/Automacao'),
   sistemas: () => import('./pages/Sistemas'),
+  termos: () => import('./pages/Termos'),
+  privacidade: () => import('./pages/Privacidade'),
   '404': () => import('./pages/NotFound'),
 }
 
