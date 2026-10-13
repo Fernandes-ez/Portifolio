@@ -10,5 +10,9 @@ export const mensagens = {
   puka: 'Oi, Enzo! Quero testar o atendimento com IA da Puka.',
 }
 
-export const wa = (texto: string = mensagens.geral) =>
+// Link direto para a conversa. Só a página /obrigado/ usa este; o resto do site usa wa().
+export const waDireto = (texto: string = mensagens.geral) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(texto)}`
+
+// Os botões do site passam por /obrigado/, que conta o pedido de contato e abre o WhatsApp em seguida.
+export const wa = (texto: string = mensagens.geral) => `/obrigado/?t=${encodeURIComponent(texto)}`

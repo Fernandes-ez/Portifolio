@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { EMAIL, WHATSAPP_DISPLAY, wa } from '../data/whatsapp'
 import styles from './Layout.module.css'
 
-type Page = 'home' | 'sites' | 'automacao' | 'sistemas' | 'termos' | 'privacidade' | '404'
+type Page = 'home' | 'sites' | 'automacao' | 'sistemas' | 'termos' | 'privacidade' | 'obrigado' | '404'
 
 const links = [
   { href: '/sites/', label: 'Sites', page: 'sites' },

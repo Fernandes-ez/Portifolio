@@ -11,6 +11,7 @@ const pages = {
   sistemas: () => import('./pages/Sistemas'),
   termos: () => import('./pages/Termos'),
   privacidade: () => import('./pages/Privacidade'),
+  obrigado: () => import('./pages/Obrigado'),
   '404': () => import('./pages/NotFound'),
 }
 
