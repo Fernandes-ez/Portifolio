@@ -14,6 +14,7 @@ const content = {
       ['servicos', 'Serviços e contratação'],
       ['responsabilidades', 'Responsabilidades'],
       ['propriedade', 'Propriedade intelectual'],
+      ['whatsapp', 'WhatsApp e IA'],
       ['contato', 'Fale comigo'],
     ],
     sections: [
@@ -50,8 +51,16 @@ const content = {
         ],
       },
       {
+        id: 'whatsapp',
+        title: '5. WhatsApp e atendimento com IA',
+        paragraphs: [
+          'Os serviços que usam o WhatsApp dependem das regras e da disponibilidade da plataforma da Meta, que podem mudar. O cliente é responsável por usar o atendimento automático conforme a política comercial do WhatsApp, enviando mensagens apenas a quem tem relação com a empresa e respeitando pedidos de parar de receber contato.',
+          'As respostas geradas por inteligência artificial podem conter imprecisões. Por isso, o conteúdo e os limites do atendimento são definidos com o cliente na implantação, e a conversa pode ser assumida por uma pessoa a qualquer momento.',
+        ],
+      },
+      {
         id: 'contato',
-        title: '5. Fale comigo',
+        title: '6. Fale comigo',
         paragraphs: [
           'Para dúvidas sobre estes termos, entre em contato pelo WhatsApp ou pelo e-mail exibido no rodapé. Estes termos podem ser atualizados para refletir mudanças no site ou nos serviços; a versão vigente será sempre a publicada nesta página.',
         ],
@@ -66,6 +75,7 @@ const content = {
       ['coleta', 'Informações coletadas'],
       ['uso', 'Como usamos'],
       ['compartilhamento', 'Compartilhamento'],
+      ['atendimento', 'Atendimento com IA'],
       ['seguranca', 'Segurança e retenção'],
       ['direitos', 'Seus direitos'],
       ['contato', 'Fale comigo'],
@@ -96,8 +106,16 @@ const content = {
         ],
       },
       {
+        id: 'atendimento',
+        title: '4. Atendimento com IA no WhatsApp',
+        paragraphs: [
+          'Quando implantamos um atendimento automático no WhatsApp para uma empresa, as mensagens dos clientes dela passam pela API oficial do WhatsApp Business (Meta) e por serviços de hospedagem e de inteligência artificial. Nesse caso, a empresa contratante é a controladora desses dados e nós atuamos como operadores, seguindo as instruções dela.',
+          'Usamos essas mensagens apenas para responder, organizar contatos e prestar o serviço contratado. Não as usamos para publicidade nem as vendemos. Quem escreveu para uma empresa atendida por nós pode pedir a exclusão dos seus dados à própria empresa ou diretamente pelos canais de contato do site.',
+        ],
+      },
+      {
         id: 'seguranca',
-        title: '4. Segurança e retenção',
+        title: '5. Segurança e retenção',
         paragraphs: [
           'Adotamos medidas razoáveis para proteger as informações contra acesso indevido, perda ou uso incompatível com esta política. Nenhum serviço online, porém, é completamente livre de riscos.',
           'Mantemos os dados apenas pelo tempo necessário para atender à finalidade do contato, cumprir obrigações legais ou exercer direitos. Depois disso, eles podem ser excluídos ou anonimizados.',
@@ -105,7 +123,7 @@ const content = {
       },
       {
         id: 'direitos',
-        title: '5. Seus direitos',
+        title: '6. Seus direitos',
         paragraphs: [
           'Você pode solicitar confirmação sobre o tratamento de seus dados, acesso, correção, eliminação quando aplicável e informações sobre o uso deles. Para exercer seus direitos, basta enviar uma solicitação pelos canais de contato do site.',
           'Podemos pedir informações adicionais para confirmar sua identidade e responderemos dentro de prazo razoável, observando as obrigações legais aplicáveis.',
@@ -113,7 +131,7 @@ const content = {
       },
       {
         id: 'contato',
-        title: '6. Fale comigo',
+        title: '7. Fale comigo',
         paragraphs: [
           `O controlador dos dados é ${RAZAO_SOCIAL} (ezf.tech), MEI, CNPJ ${CNPJ}, de São Paulo, SP. Se tiver dúvidas sobre privacidade ou quiser fazer uma solicitação, use o WhatsApp ou o e-mail exibido no rodapé. Esta política pode ser atualizada quando houver mudanças no site, nos serviços ou na legislação aplicável.`,
         ],
