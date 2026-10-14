@@ -1,5 +1,6 @@
 export const WHATSAPP_NUMBER = '5511991084238'
 export const WHATSAPP_DISPLAY = '(11) 99108-4238'
+export const CNPJ = '69.594.649/0001-84'
 export const EMAIL = 'ezftech.contato@gmail.com'
 
 export const mensagens = {

@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react'
-import { EMAIL, WHATSAPP_DISPLAY, wa } from '../data/whatsapp'
+import { CNPJ, EMAIL, WHATSAPP_DISPLAY, wa } from '../data/whatsapp'
 import styles from './Layout.module.css'
 
 type Page = 'home' | 'sites' | 'automacao' | 'sistemas' | 'termos' | 'privacidade' | 'obrigado' | '404'
@@ -89,6 +89,8 @@ export default function Layout({ page, children }: { page: Page; children: React
             <span>{EMAIL}</span>
             <span aria-hidden="true"> · </span>
             <span>São Paulo</span>
+            <span aria-hidden="true"> · </span>
+            <span>CNPJ {CNPJ}</span>
             <span aria-hidden="true"> · </span>
             <span>
               <a href="/termos/">Termos</a>

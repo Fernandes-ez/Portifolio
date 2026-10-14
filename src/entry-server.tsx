@@ -10,7 +10,7 @@ import Privacidade from './pages/Privacidade'
 import NotFound from './pages/NotFound'
 import { perguntasSites } from './data/faq'
 import { pacotesAutomacao, pacotesSistemas, pacotesSites, type Pacote } from './data/precos'
-import { EMAIL, WHATSAPP_NUMBER } from './data/whatsapp'
+import { CNPJ, EMAIL, WHATSAPP_NUMBER } from './data/whatsapp'
 import { links } from './data/links'
 
 export const SITE = 'https://ezf-tech.com'
@@ -52,6 +52,7 @@ const empresa = {
   image: `${SITE}/og.png`,
   telephone: `+${WHATSAPP_NUMBER}`,
   email: EMAIL,
+  taxID: CNPJ,
   areaServed: { '@type': 'Country', name: 'Brasil' },
   knowsAbout: ['criação de sites', 'automação de atendimento no WhatsApp', 'sistemas sob medida', 'agendamento online'],
   founder: { '@type': 'Person', name: 'Enzo Fernandes', jobTitle: 'Desenvolvedor', url: `${SITE}/#sobre` },

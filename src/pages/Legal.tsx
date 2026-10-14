@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import { CNPJ } from '../data/whatsapp'
 import styles from './Legal.module.css'
 
 type LegalPage = 'termos' | 'privacidade'
@@ -20,7 +21,7 @@ const content = {
         id: 'escopo',
         title: '1. Escopo',
         paragraphs: [
-          'Estes termos regulam o uso do site ezf.tech e a apresentação dos serviços de criação de sites, automação e sistemas para empresas.',
+          `Estes termos regulam o uso do site ezf.tech e a apresentação dos serviços de criação de sites, automação e sistemas para empresas. O site e os serviços são de responsabilidade de Enzo Fernandes, microempreendedor individual (MEI), CNPJ ${CNPJ}, com sede em São Paulo, SP.`,
           'Ao navegar por este site, você concorda com estes termos. Se não concordar com alguma parte, interrompa a navegação e entre em contato para esclarecer suas dúvidas.',
         ],
       },
@@ -114,7 +115,7 @@ const content = {
         id: 'contato',
         title: '6. Fale comigo',
         paragraphs: [
-          'Se tiver dúvidas sobre privacidade ou quiser fazer uma solicitação, use o WhatsApp ou o e-mail exibido no rodapé. Esta política pode ser atualizada quando houver mudanças no site, nos serviços ou na legislação aplicável.',
+          `O controlador dos dados é Enzo Fernandes (ezf.tech), MEI, CNPJ ${CNPJ}, de São Paulo, SP. Se tiver dúvidas sobre privacidade ou quiser fazer uma solicitação, use o WhatsApp ou o e-mail exibido no rodapé. Esta política pode ser atualizada quando houver mudanças no site, nos serviços ou na legislação aplicável.`,
         ],
       },
     ],
