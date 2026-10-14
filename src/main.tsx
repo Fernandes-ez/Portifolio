@@ -1,5 +1,5 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import './styles/tokens.css'
 import './styles/global.css'
 
@@ -18,9 +18,13 @@ const pages = {
 const key = (document.body.dataset.page ?? 'home') as keyof typeof pages
 
 pages[key]().then(({ default: Page }) => {
-  createRoot(document.getElementById('root')!).render(
+  const root = document.getElementById('root')!
+  const app = (
     <StrictMode>
       <Page />
-    </StrictMode>,
+    </StrictMode>
   )
+  // Páginas pré-renderizadas no build já têm conteúdo: o React só "assume". As demais (e o modo dev) montam do zero.
+  if (root.hasChildNodes()) hydrateRoot(root, app)
+  else createRoot(root).render(app)
 })

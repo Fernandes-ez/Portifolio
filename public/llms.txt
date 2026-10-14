@@ -1,0 +1,17 @@
+# ezf.tech
+
+> Sites, atendimento automático no WhatsApp e sistemas para pequenas e médias empresas, feitos e mantidos por Enzo Fernandes, desenvolvedor em São Paulo. O cliente fala direto com ele, do orçamento à entrega. Atende em todo o Brasil.
+
+## Serviços
+- [Sites](https://ezf-tech.com/sites/): página, site institucional e catálogo com painel, com protótipo grátis antes de fechar e domínio no nome do cliente.
+- [Automação](https://ezf-tech.com/automacao/): lembretes e formulários automáticos, automações com várias integrações e atendimento com IA no WhatsApp (Puka).
+- [Sistemas](https://ezf-tech.com/sistemas/): agendamento online e sistemas sob medida, entregues por etapas.
+
+## Contato e perfis
+- [Início](https://ezf-tech.com/)
+- [Perfil no Google](https://share.google/nsE8k2pHoZ9tKTPhj)
+- [Instagram](https://www.instagram.com/ezf.tech/)
+
+## Legal
+- [Termos](https://ezf-tech.com/termos/)
+- [Política de privacidade](https://ezf-tech.com/privacidade/)

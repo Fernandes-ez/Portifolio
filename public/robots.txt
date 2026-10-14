@@ -1,0 +1,6 @@
+# Todos os rastreadores (buscadores e IAs) podem ler o site, exceto a página de passagem do WhatsApp.
+User-agent: *
+Allow: /
+Disallow: /obrigado/
+
+Sitemap: https://ezf-tech.com/sitemap.xml
